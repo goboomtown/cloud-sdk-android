@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.swagger</groupId>
-  <artifactId>boomtown-api_v2-swagger-jersey2</artifactId>
+  <artifactId>boomtown-api_v2-swagger-android</artifactId>
   <packaging>jar</packaging>
-  <name>boomtown-api_v2-swagger-jersey2</name>
+  <name>boomtown-api_v2-swagger-android</name>
   <version>1.0.0</version>
   <scm>
     <connection>scm:git:git@github.com:swagger-api/swagger-mustache.git</connection>
