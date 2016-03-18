@@ -1,12 +1,12 @@
 package com.goboomtown.sdk;
 
 import android.util.Base64;
-import io.swagger.client.ApiException;
-import io.swagger.client.ApiInvoker;
-import io.swagger.client.Pair;
-import io.swagger.client.api.IssuesApi;
-import io.swagger.client.api.MerchantsApi;
-import io.swagger.client.api.ProvidersApi;
+import com.goboomtown.sdk.swagger.ApiException;
+import com.goboomtown.sdk.swagger.ApiInvoker;
+import com.goboomtown.sdk.swagger.Pair;
+import com.goboomtown.sdk.swagger.api.IssuesApi;
+import com.goboomtown.sdk.swagger.api.MerchantsApi;
+import com.goboomtown.sdk.swagger.api.ProvidersApi;
 
 import javax.crypto.Mac;
 import java.io.UnsupportedEncodingException;
