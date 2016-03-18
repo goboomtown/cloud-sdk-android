@@ -1,41 +1,41 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class MemberUser   {
+@ApiModel(description = "")
+public class MemberUser  {
   
+  @SerializedName("id")
   private String id = null;
+  @SerializedName("members_id")
   private String membersId = null;
+  @SerializedName("members_locations_id")
   private String membersLocationsId = null;
+  @SerializedName("first_name")
   private String firstName = null;
+  @SerializedName("last_name")
   private String lastName = null;
+  @SerializedName("full_name")
   private String fullName = null;
+  @SerializedName("email")
   private String email = null;
+  @SerializedName("sms_number")
   private String smsNumber = null;
+  @SerializedName("lang")
   private String lang = null;
+  @SerializedName("status")
   private String status = null;
 
   
   /**
    * Primary key.
    **/
-  public MemberUser id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary key.")
-  @JsonProperty("id")
+  @ApiModelProperty(value = "Primary key.")
   public String getId() {
     return id;
   }
@@ -47,13 +47,7 @@ public class MemberUser   {
   /**
    * The primary key of the related *Merchant*.
    **/
-  public MemberUser membersId(String membersId) {
-    this.membersId = membersId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The primary key of the related *Merchant*.")
-  @JsonProperty("members_id")
+  @ApiModelProperty(value = "The primary key of the related *Merchant*.")
   public String getMembersId() {
     return membersId;
   }
@@ -65,13 +59,7 @@ public class MemberUser   {
   /**
    * The primary key of the related *MerchantLocation*.
    **/
-  public MemberUser membersLocationsId(String membersLocationsId) {
-    this.membersLocationsId = membersLocationsId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The primary key of the related *MerchantLocation*.")
-  @JsonProperty("members_locations_id")
+  @ApiModelProperty(value = "The primary key of the related *MerchantLocation*.")
   public String getMembersLocationsId() {
     return membersLocationsId;
   }
@@ -83,13 +71,7 @@ public class MemberUser   {
   /**
    * First name.
    **/
-  public MemberUser firstName(String firstName) {
-    this.firstName = firstName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "First name.")
-  @JsonProperty("first_name")
+  @ApiModelProperty(required = true, value = "First name.")
   public String getFirstName() {
     return firstName;
   }
@@ -101,13 +83,7 @@ public class MemberUser   {
   /**
    * Last name.
    **/
-  public MemberUser lastName(String lastName) {
-    this.lastName = lastName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Last name.")
-  @JsonProperty("last_name")
+  @ApiModelProperty(required = true, value = "Last name.")
   public String getLastName() {
     return lastName;
   }
@@ -119,13 +95,7 @@ public class MemberUser   {
   /**
    * Concatenation of first and last name.
    **/
-  public MemberUser fullName(String fullName) {
-    this.fullName = fullName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Concatenation of first and last name.")
-  @JsonProperty("full_name")
+  @ApiModelProperty(value = "Concatenation of first and last name.")
   public String getFullName() {
     return fullName;
   }
@@ -137,13 +107,7 @@ public class MemberUser   {
   /**
    * Email address.
    **/
-  public MemberUser email(String email) {
-    this.email = email;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Email address.")
-  @JsonProperty("email")
+  @ApiModelProperty(required = true, value = "Email address.")
   public String getEmail() {
     return email;
   }
@@ -155,13 +119,7 @@ public class MemberUser   {
   /**
    * SMS capable phone number.
    **/
-  public MemberUser smsNumber(String smsNumber) {
-    this.smsNumber = smsNumber;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "SMS capable phone number.")
-  @JsonProperty("sms_number")
+  @ApiModelProperty(value = "SMS capable phone number.")
   public String getSmsNumber() {
     return smsNumber;
   }
@@ -173,13 +131,7 @@ public class MemberUser   {
   /**
    * Language.
    **/
-  public MemberUser lang(String lang) {
-    this.lang = lang;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Language.")
-  @JsonProperty("lang")
+  @ApiModelProperty(value = "Language.")
   public String getLang() {
     return lang;
   }
@@ -191,13 +143,7 @@ public class MemberUser   {
   /**
    * Status.
    **/
-  public MemberUser status(String status) {
-    this.status = status;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Status.")
-  @JsonProperty("status")
+  @ApiModelProperty(value = "Status.")
   public String getStatus() {
     return status;
   }
@@ -208,61 +154,23 @@ public class MemberUser   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MemberUser memberUser = (MemberUser) o;
-    return Objects.equals(this.id, memberUser.id) &&
-        Objects.equals(this.membersId, memberUser.membersId) &&
-        Objects.equals(this.membersLocationsId, memberUser.membersLocationsId) &&
-        Objects.equals(this.firstName, memberUser.firstName) &&
-        Objects.equals(this.lastName, memberUser.lastName) &&
-        Objects.equals(this.fullName, memberUser.fullName) &&
-        Objects.equals(this.email, memberUser.email) &&
-        Objects.equals(this.smsNumber, memberUser.smsNumber) &&
-        Objects.equals(this.lang, memberUser.lang) &&
-        Objects.equals(this.status, memberUser.status);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, membersId, membersLocationsId, firstName, lastName, fullName, email, smsNumber, lang, status);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberUser {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    membersId: ").append(toIndentedString(membersId)).append("\n");
-    sb.append("    membersLocationsId: ").append(toIndentedString(membersLocationsId)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    smsNumber: ").append(toIndentedString(smsNumber)).append("\n");
-    sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("}");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  membersId: ").append(membersId).append("\n");
+    sb.append("  membersLocationsId: ").append(membersLocationsId).append("\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
+    sb.append("  lastName: ").append(lastName).append("\n");
+    sb.append("  fullName: ").append(fullName).append("\n");
+    sb.append("  email: ").append(email).append("\n");
+    sb.append("  smsNumber: ").append(smsNumber).append("\n");
+    sb.append("  lang: ").append(lang).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

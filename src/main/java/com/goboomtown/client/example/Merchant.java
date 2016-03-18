@@ -110,7 +110,7 @@ public final class Merchant {
                 locations.add(Location.fromEntity(entity));
             }
         } else {
-            throw new ApiException(memberLocations.getMessage());
+            throw new ApiException(0, memberLocations.getMessage());
         }
         return locations;
     }
@@ -127,7 +127,7 @@ public final class Merchant {
                 users.add(User.fromEntity(entity));
             }
         } else {
-            throw new ApiException(memberUsers.getMessage());
+            throw new ApiException(0, memberUsers.getMessage());
         }
         return users;
     }
@@ -144,7 +144,7 @@ public final class Merchant {
                 issues.add(com.goboomtown.client.example.Issue.fromEntity(entity));
             }
         } else {
-            throw new ApiException(issuesResponse.getMessage());
+            throw new ApiException(0, issuesResponse.getMessage());
         }
         return issues;
     }
@@ -262,7 +262,7 @@ public final class Merchant {
                     issues.add(com.goboomtown.client.example.Issue.fromEntity(entity));
                 }
             } else {
-                throw new ApiException(issuesResponse.getMessage());
+                throw new ApiException(0, issuesResponse.getMessage());
             }
             return issues;
         }
@@ -372,7 +372,7 @@ public final class Merchant {
                     issues.add(com.goboomtown.client.example.Issue.fromEntity(entity));
                 }
             } else {
-                throw new ApiException(issuesResponse.getMessage());
+                throw new ApiException(0, issuesResponse.getMessage());
             }
             return issues;
         }

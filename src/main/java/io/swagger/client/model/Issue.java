@@ -1,54 +1,66 @@
 package io.swagger.client.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Date;
-import java.util.Objects;
+
+
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class Issue   {
+@ApiModel(description = "")
+public class Issue  {
   
+  @SerializedName("id")
   private String id = null;
+  @SerializedName("reference_num")
   private String referenceNum = null;
+  @SerializedName("members_id")
   private String membersId = null;
+  @SerializedName("members_name")
   private String membersName = null;
+  @SerializedName("members_email")
   private String membersEmail = null;
+  @SerializedName("members_locations_id")
   private String membersLocationsId = null;
+  @SerializedName("members_locations_name")
   private String membersLocationsName = null;
+  @SerializedName("members_users_id")
   private String membersUsersId = null;
+  @SerializedName("members_users_name")
   private String membersUsersName = null;
+  @SerializedName("members_users_email")
   private String membersUsersEmail = null;
+  @SerializedName("type")
   private String type = null;
+  @SerializedName("category")
   private String category = null;
+  @SerializedName("details")
   private String details = null;
+  @SerializedName("status")
   private String status = null;
+  @SerializedName("job")
   private String job = null;
+  @SerializedName("resolution")
   private String resolution = null;
+  @SerializedName("created")
   private Date created = null;
+  @SerializedName("updated")
   private Date updated = null;
+  @SerializedName("enroute_time")
   private Date enrouteTime = null;
+  @SerializedName("scheduled_time")
   private Date scheduledTime = null;
+  @SerializedName("arrival_time")
   private Date arrivalTime = null;
+  @SerializedName("departure_time")
   private Date departureTime = null;
 
   
   /**
    * Primary key.
    **/
-  public Issue id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary key.")
-  @JsonProperty("id")
+  @ApiModelProperty(value = "Primary key.")
   public String getId() {
     return id;
   }
@@ -60,13 +72,7 @@ public class Issue   {
   /**
    * Reference number.
    **/
-  public Issue referenceNum(String referenceNum) {
-    this.referenceNum = referenceNum;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Reference number.")
-  @JsonProperty("reference_num")
+  @ApiModelProperty(value = "Reference number.")
   public String getReferenceNum() {
     return referenceNum;
   }
@@ -78,13 +84,7 @@ public class Issue   {
   /**
    * The primary key of the related *Merchant*.
    **/
-  public Issue membersId(String membersId) {
-    this.membersId = membersId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The primary key of the related *Merchant*.")
-  @JsonProperty("members_id")
+  @ApiModelProperty(required = true, value = "The primary key of the related *Merchant*.")
   public String getMembersId() {
     return membersId;
   }
@@ -95,13 +95,7 @@ public class Issue   {
   
   /**
    **/
-  public Issue membersName(String membersName) {
-    this.membersName = membersName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("members_name")
+  @ApiModelProperty(value = "")
   public String getMembersName() {
     return membersName;
   }
@@ -112,13 +106,7 @@ public class Issue   {
   
   /**
    **/
-  public Issue membersEmail(String membersEmail) {
-    this.membersEmail = membersEmail;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("members_email")
+  @ApiModelProperty(value = "")
   public String getMembersEmail() {
     return membersEmail;
   }
@@ -130,13 +118,7 @@ public class Issue   {
   /**
    * The primary key of the related *MerchantLocation*.
    **/
-  public Issue membersLocationsId(String membersLocationsId) {
-    this.membersLocationsId = membersLocationsId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The primary key of the related *MerchantLocation*.")
-  @JsonProperty("members_locations_id")
+  @ApiModelProperty(required = true, value = "The primary key of the related *MerchantLocation*.")
   public String getMembersLocationsId() {
     return membersLocationsId;
   }
@@ -147,13 +129,7 @@ public class Issue   {
   
   /**
    **/
-  public Issue membersLocationsName(String membersLocationsName) {
-    this.membersLocationsName = membersLocationsName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("members_locations_name")
+  @ApiModelProperty(value = "")
   public String getMembersLocationsName() {
     return membersLocationsName;
   }
@@ -165,13 +141,7 @@ public class Issue   {
   /**
    * The primary key of the related *MerchantUser*.
    **/
-  public Issue membersUsersId(String membersUsersId) {
-    this.membersUsersId = membersUsersId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The primary key of the related *MerchantUser*.")
-  @JsonProperty("members_users_id")
+  @ApiModelProperty(required = true, value = "The primary key of the related *MerchantUser*.")
   public String getMembersUsersId() {
     return membersUsersId;
   }
@@ -182,13 +152,7 @@ public class Issue   {
   
   /**
    **/
-  public Issue membersUsersName(String membersUsersName) {
-    this.membersUsersName = membersUsersName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("members_users_name")
+  @ApiModelProperty(value = "")
   public String getMembersUsersName() {
     return membersUsersName;
   }
@@ -199,13 +163,7 @@ public class Issue   {
   
   /**
    **/
-  public Issue membersUsersEmail(String membersUsersEmail) {
-    this.membersUsersEmail = membersUsersEmail;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("members_users_email")
+  @ApiModelProperty(value = "")
   public String getMembersUsersEmail() {
     return membersUsersEmail;
   }
@@ -217,13 +175,7 @@ public class Issue   {
   /**
    * Type.
    **/
-  public Issue type(String type) {
-    this.type = type;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Type.")
-  @JsonProperty("type")
+  @ApiModelProperty(value = "Type.")
   public String getType() {
     return type;
   }
@@ -235,13 +187,7 @@ public class Issue   {
   /**
    * Category.
    **/
-  public Issue category(String category) {
-    this.category = category;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Category.")
-  @JsonProperty("category")
+  @ApiModelProperty(value = "Category.")
   public String getCategory() {
     return category;
   }
@@ -253,13 +199,7 @@ public class Issue   {
   /**
    * Details.
    **/
-  public Issue details(String details) {
-    this.details = details;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Details.")
-  @JsonProperty("details")
+  @ApiModelProperty(value = "Details.")
   public String getDetails() {
     return details;
   }
@@ -271,13 +211,7 @@ public class Issue   {
   /**
    * Status.
    **/
-  public Issue status(String status) {
-    this.status = status;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Status.")
-  @JsonProperty("status")
+  @ApiModelProperty(value = "Status.")
   public String getStatus() {
     return status;
   }
@@ -289,13 +223,7 @@ public class Issue   {
   /**
    * Job type.
    **/
-  public Issue job(String job) {
-    this.job = job;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Job type.")
-  @JsonProperty("job")
+  @ApiModelProperty(value = "Job type.")
   public String getJob() {
     return job;
   }
@@ -307,13 +235,7 @@ public class Issue   {
   /**
    * Resolution type.
    **/
-  public Issue resolution(String resolution) {
-    this.resolution = resolution;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Resolution type.")
-  @JsonProperty("resolution")
+  @ApiModelProperty(value = "Resolution type.")
   public String getResolution() {
     return resolution;
   }
@@ -325,13 +247,7 @@ public class Issue   {
   /**
    * Date created.
    **/
-  public Issue created(Date created) {
-    this.created = created;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date created.")
-  @JsonProperty("created")
+  @ApiModelProperty(value = "Date created.")
   public Date getCreated() {
     return created;
   }
@@ -343,13 +259,7 @@ public class Issue   {
   /**
    * Date last updated.
    **/
-  public Issue updated(Date updated) {
-    this.updated = updated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date last updated.")
-  @JsonProperty("updated")
+  @ApiModelProperty(value = "Date last updated.")
   public Date getUpdated() {
     return updated;
   }
@@ -361,13 +271,7 @@ public class Issue   {
   /**
    * Actual technician travel time.
    **/
-  public Issue enrouteTime(Date enrouteTime) {
-    this.enrouteTime = enrouteTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Actual technician travel time.")
-  @JsonProperty("enroute_time")
+  @ApiModelProperty(value = "Actual technician travel time.")
   public Date getEnrouteTime() {
     return enrouteTime;
   }
@@ -379,13 +283,7 @@ public class Issue   {
   /**
    * Date/time scheduled.
    **/
-  public Issue scheduledTime(Date scheduledTime) {
-    this.scheduledTime = scheduledTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date/time scheduled.")
-  @JsonProperty("scheduled_time")
+  @ApiModelProperty(value = "Date/time scheduled.")
   public Date getScheduledTime() {
     return scheduledTime;
   }
@@ -397,13 +295,7 @@ public class Issue   {
   /**
    * Technician arrival time.
    **/
-  public Issue arrivalTime(Date arrivalTime) {
-    this.arrivalTime = arrivalTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Technician arrival time.")
-  @JsonProperty("arrival_time")
+  @ApiModelProperty(value = "Technician arrival time.")
   public Date getArrivalTime() {
     return arrivalTime;
   }
@@ -415,13 +307,7 @@ public class Issue   {
   /**
    * Technician departure time.
    **/
-  public Issue departureTime(Date departureTime) {
-    this.departureTime = departureTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Technician departure time.")
-  @JsonProperty("departure_time")
+  @ApiModelProperty(value = "Technician departure time.")
   public Date getDepartureTime() {
     return departureTime;
   }
@@ -432,85 +318,35 @@ public class Issue   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Issue issue = (Issue) o;
-    return Objects.equals(this.id, issue.id) &&
-        Objects.equals(this.referenceNum, issue.referenceNum) &&
-        Objects.equals(this.membersId, issue.membersId) &&
-        Objects.equals(this.membersName, issue.membersName) &&
-        Objects.equals(this.membersEmail, issue.membersEmail) &&
-        Objects.equals(this.membersLocationsId, issue.membersLocationsId) &&
-        Objects.equals(this.membersLocationsName, issue.membersLocationsName) &&
-        Objects.equals(this.membersUsersId, issue.membersUsersId) &&
-        Objects.equals(this.membersUsersName, issue.membersUsersName) &&
-        Objects.equals(this.membersUsersEmail, issue.membersUsersEmail) &&
-        Objects.equals(this.type, issue.type) &&
-        Objects.equals(this.category, issue.category) &&
-        Objects.equals(this.details, issue.details) &&
-        Objects.equals(this.status, issue.status) &&
-        Objects.equals(this.job, issue.job) &&
-        Objects.equals(this.resolution, issue.resolution) &&
-        Objects.equals(this.created, issue.created) &&
-        Objects.equals(this.updated, issue.updated) &&
-        Objects.equals(this.enrouteTime, issue.enrouteTime) &&
-        Objects.equals(this.scheduledTime, issue.scheduledTime) &&
-        Objects.equals(this.arrivalTime, issue.arrivalTime) &&
-        Objects.equals(this.departureTime, issue.departureTime);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, referenceNum, membersId, membersName, membersEmail, membersLocationsId, membersLocationsName, membersUsersId, membersUsersName, membersUsersEmail, type, category, details, status, job, resolution, created, updated, enrouteTime, scheduledTime, arrivalTime, departureTime);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Issue {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    referenceNum: ").append(toIndentedString(referenceNum)).append("\n");
-    sb.append("    membersId: ").append(toIndentedString(membersId)).append("\n");
-    sb.append("    membersName: ").append(toIndentedString(membersName)).append("\n");
-    sb.append("    membersEmail: ").append(toIndentedString(membersEmail)).append("\n");
-    sb.append("    membersLocationsId: ").append(toIndentedString(membersLocationsId)).append("\n");
-    sb.append("    membersLocationsName: ").append(toIndentedString(membersLocationsName)).append("\n");
-    sb.append("    membersUsersId: ").append(toIndentedString(membersUsersId)).append("\n");
-    sb.append("    membersUsersName: ").append(toIndentedString(membersUsersName)).append("\n");
-    sb.append("    membersUsersEmail: ").append(toIndentedString(membersUsersEmail)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    job: ").append(toIndentedString(job)).append("\n");
-    sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-    sb.append("    enrouteTime: ").append(toIndentedString(enrouteTime)).append("\n");
-    sb.append("    scheduledTime: ").append(toIndentedString(scheduledTime)).append("\n");
-    sb.append("    arrivalTime: ").append(toIndentedString(arrivalTime)).append("\n");
-    sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
-    sb.append("}");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  referenceNum: ").append(referenceNum).append("\n");
+    sb.append("  membersId: ").append(membersId).append("\n");
+    sb.append("  membersName: ").append(membersName).append("\n");
+    sb.append("  membersEmail: ").append(membersEmail).append("\n");
+    sb.append("  membersLocationsId: ").append(membersLocationsId).append("\n");
+    sb.append("  membersLocationsName: ").append(membersLocationsName).append("\n");
+    sb.append("  membersUsersId: ").append(membersUsersId).append("\n");
+    sb.append("  membersUsersName: ").append(membersUsersName).append("\n");
+    sb.append("  membersUsersEmail: ").append(membersUsersEmail).append("\n");
+    sb.append("  type: ").append(type).append("\n");
+    sb.append("  category: ").append(category).append("\n");
+    sb.append("  details: ").append(details).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("  job: ").append(job).append("\n");
+    sb.append("  resolution: ").append(resolution).append("\n");
+    sb.append("  created: ").append(created).append("\n");
+    sb.append("  updated: ").append(updated).append("\n");
+    sb.append("  enrouteTime: ").append(enrouteTime).append("\n");
+    sb.append("  scheduledTime: ").append(scheduledTime).append("\n");
+    sb.append("  arrivalTime: ").append(arrivalTime).append("\n");
+    sb.append("  departureTime: ").append(departureTime).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

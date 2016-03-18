@@ -1,18 +1,14 @@
 package com.goboomtown.sdk;
 
-import io.swagger.client.ApiClient;
+import android.util.Base64;
 import io.swagger.client.ApiException;
+import io.swagger.client.ApiInvoker;
 import io.swagger.client.Pair;
 import io.swagger.client.api.IssuesApi;
 import io.swagger.client.api.MerchantsApi;
 import io.swagger.client.api.ProvidersApi;
-import io.swagger.client.auth.ApiKeyAuth;
-import org.glassfish.jersey.uri.internal.JerseyUriBuilder;
 
 import javax.crypto.Mac;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.UriBuilder;
-import javax.xml.bind.DatatypeConverter;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -70,7 +66,14 @@ public class ApiUtil {
      * @return A new ProvidersApi instance
      */
     public static ProvidersApi getProvidersApi() {
-        return new ProvidersApi(mkApiClient());
+        return new ProvidersApi() {
+            ApiInvoker invoker = mkApiInvoker();
+
+            @Override
+            public ApiInvoker getInvoker() {
+                return invoker;
+            }
+        };
     }
 
     /**
@@ -79,7 +82,14 @@ public class ApiUtil {
      * @return A new MerchantsApi instance
      */
     public static MerchantsApi getMerchantsApi() {
-        return new MerchantsApi(mkApiClient());
+        return new MerchantsApi() {
+            ApiInvoker invoker = mkApiInvoker();
+
+            @Override
+            public ApiInvoker getInvoker() {
+                return invoker;
+            }
+        };
     }
 
     /**
@@ -88,51 +98,60 @@ public class ApiUtil {
      * @return A new IssuesAPI instance
      */
     public static IssuesApi getIssuesApi() {
-        return new IssuesApi(mkApiClient());
+        return new IssuesApi() {
+            ApiInvoker invoker = mkApiInvoker();
+
+            @Override
+            public ApiInvoker getInvoker() {
+                return invoker;
+            }
+        };
     }
 
     /**
      * Returns an encoded X-Boomtown-Signature.
      */
     private static String encode(String data) throws Exception {
-        return DatatypeConverter.printBase64Binary(sha256_HMAC.doFinal(data.getBytes("UTF-8")));
+        return Base64.encodeToString(sha256_HMAC.doFinal(data.getBytes("UTF-8")), Base64.DEFAULT);
     }
 
     /**
      * @return A new ApiClient instance which handles Boomtown api/v2 authentication
      */
-    private static ApiClient mkApiClient() {
+    private static ApiInvoker mkApiInvoker() {
         if (sha256_HMAC == null || token == null) {
             throw new IllegalStateException("ApiUtil.initialize() required");
         }
 
-        ApiClient apiClient = new ApiClient() {
+        return new ApiInvoker() {
             @Override
-            public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, GenericType<T> returnType) throws ApiException {
+            public String invokeAPI(String host, String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, String> formParams, String contentType) throws ApiException {
                 String dt = DATE_FORMAT.format(new Date());
 
-                ApiKeyAuth apiToken = (ApiKeyAuth)getAuthentication("X-Boomtown-Token");
-                apiToken.setApiKey(token);
+                headerParams.put("X-Boomtown-Date", dt);
+                headerParams.put("X-Boomtown-Token", token);
 
-                ApiKeyAuth apiSignature = (ApiKeyAuth)getAuthentication("X-Boomtown-Signature");
                 try {
-                    UriBuilder uriBuilder = new JerseyUriBuilder();
-                    uriBuilder.path(BASE_PATH + path);
-                    for (Pair queryParam : queryParams) {
-                        uriBuilder = uriBuilder.queryParam(queryParam.getName(), queryParam.getValue());
+                    StringBuilder b = new StringBuilder();
+                    b.append("?");
+                    //noinspection Duplicates
+                    if (queryParams != null){
+                        for (Pair queryParam : queryParams){
+                            if (!queryParam.getName().isEmpty()) {
+                                b.append(escapeString(queryParam.getName()));
+                                b.append("=");
+                                b.append(escapeString(queryParam.getValue()));
+                                b.append("&");
+                            }
+                        }
                     }
-                    apiSignature.setApiKey(encode(uriBuilder.toTemplate() + ':' + dt));
+                    headerParams.put("X-Boomtown-Signature", encode(BASE_PATH + path + b.substring(0, b.length() - 1) + ':' + dt));
                 } catch (Exception e) {
-                    throw new ApiException(e);
+                    throw new ApiException(0, e.getMessage());
                 }
 
-                ApiKeyAuth apiDate = (ApiKeyAuth)getAuthentication("X-Boomtown-Date");
-                apiDate.setApiKey(dt);
-
-                return super.invokeAPI(path, method, queryParams, body, headerParams, formParams, accept, contentType, authNames, returnType);
+                return super.invokeAPI(host, path, method, queryParams, body, headerParams, formParams, contentType);
             }
         };
-        apiClient.setDateFormat(DATE_FORMAT_API);
-        return apiClient;
     }
 }

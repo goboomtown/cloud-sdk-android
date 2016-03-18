@@ -199,7 +199,7 @@ public final class Issue {
         if (memberResponse.getSuccess() != null && memberResponse.getSuccess() && memberResponse.getResults().size() == 1) {
             return Merchant.fromEntity(memberResponse.getResults().get(0));
         } else {
-            throw new ApiException(memberResponse.getMessage());
+            throw new ApiException(0, memberResponse.getMessage());
         }
     }
 
@@ -212,7 +212,7 @@ public final class Issue {
         if (userResponse.getSuccess() != null && userResponse.getSuccess() && userResponse.getResults().size() == 1) {
             return Merchant.User.fromEntity(userResponse.getResults().get(0));
         } else {
-            throw new ApiException(userResponse.getMessage());
+            throw new ApiException(0, userResponse.getMessage());
         }
     }
 
@@ -225,7 +225,7 @@ public final class Issue {
         if (locationResponse.getSuccess() != null && locationResponse.getSuccess() && locationResponse.getResults().size() == 1) {
             return Merchant.Location.fromEntity(locationResponse.getResults().get(0));
         } else {
-            throw new ApiException(locationResponse.getMessage());
+            throw new ApiException(0, locationResponse.getMessage());
         }
     }
 
@@ -241,7 +241,7 @@ public final class Issue {
                 logs.add(Log.fromEntity(entity));
             }
         } else {
-            throw new ApiException(issueLogs.getMessage());
+            throw new ApiException(0, issueLogs.getMessage());
         }
         return logs;
     }
@@ -258,7 +258,7 @@ public final class Issue {
                 statusHistories.add(StatusHistory.fromEntity(entity));
             }
         } else {
-            throw new ApiException(issueStatusHistory.getMessage());
+            throw new ApiException(0, issueStatusHistory.getMessage());
         }
         return statusHistories;
     }
@@ -295,7 +295,7 @@ public final class Issue {
         if (issuesResponse.getSuccess() != null && issuesResponse.getSuccess() && issuesResponse.getResults().size() == 1) {
             return updateEntity(this, issuesResponse.getResults().get(0));
         } else {
-            throw new ApiException(issuesResponse.getMessage());
+            throw new ApiException(0, issuesResponse.getMessage());
         }
     }
 

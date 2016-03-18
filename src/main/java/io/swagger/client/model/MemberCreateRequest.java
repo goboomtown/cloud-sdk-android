@@ -1,36 +1,29 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Member;
 import io.swagger.client.model.MemberLocation;
 import io.swagger.client.model.MemberUser;
 
 
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class MemberCreateRequest   {
+@ApiModel(description = "")
+public class MemberCreateRequest  {
   
+  @SerializedName("members")
   private Member members = null;
+  @SerializedName("members_users")
   private MemberUser membersUsers = null;
+  @SerializedName("members_locations")
   private MemberLocation membersLocations = null;
 
   
   /**
    **/
-  public MemberCreateRequest members(Member members) {
-    this.members = members;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "")
-  @JsonProperty("members")
+  @ApiModelProperty(required = true, value = "")
   public Member getMembers() {
     return members;
   }
@@ -41,13 +34,7 @@ public class MemberCreateRequest   {
   
   /**
    **/
-  public MemberCreateRequest membersUsers(MemberUser membersUsers) {
-    this.membersUsers = membersUsers;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "")
-  @JsonProperty("members_users")
+  @ApiModelProperty(required = true, value = "")
   public MemberUser getMembersUsers() {
     return membersUsers;
   }
@@ -58,13 +45,7 @@ public class MemberCreateRequest   {
   
   /**
    **/
-  public MemberCreateRequest membersLocations(MemberLocation membersLocations) {
-    this.membersLocations = membersLocations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "")
-  @JsonProperty("members_locations")
+  @ApiModelProperty(required = true, value = "")
   public MemberLocation getMembersLocations() {
     return membersLocations;
   }
@@ -75,47 +56,16 @@ public class MemberCreateRequest   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MemberCreateRequest memberCreateRequest = (MemberCreateRequest) o;
-    return Objects.equals(this.members, memberCreateRequest.members) &&
-        Objects.equals(this.membersUsers, memberCreateRequest.membersUsers) &&
-        Objects.equals(this.membersLocations, memberCreateRequest.membersLocations);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(members, membersUsers, membersLocations);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberCreateRequest {\n");
     
-    sb.append("    members: ").append(toIndentedString(members)).append("\n");
-    sb.append("    membersUsers: ").append(toIndentedString(membersUsers)).append("\n");
-    sb.append("    membersLocations: ").append(toIndentedString(membersLocations)).append("\n");
-    sb.append("}");
+    sb.append("  members: ").append(members).append("\n");
+    sb.append("  membersUsers: ").append(membersUsers).append("\n");
+    sb.append("  membersLocations: ").append(membersLocations).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

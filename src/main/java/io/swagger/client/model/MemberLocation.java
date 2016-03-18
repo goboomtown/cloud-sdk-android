@@ -1,42 +1,43 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class MemberLocation   {
+@ApiModel(description = "")
+public class MemberLocation  {
   
+  @SerializedName("id")
   private String id = null;
+  @SerializedName("members_id")
   private String membersId = null;
+  @SerializedName("street_1")
   private String street1 = null;
+  @SerializedName("street_2")
   private String street2 = null;
+  @SerializedName("city")
   private String city = null;
+  @SerializedName("state")
   private String state = null;
+  @SerializedName("zipcode")
   private String zipcode = null;
+  @SerializedName("latitude")
   private Double latitude = null;
+  @SerializedName("longitude")
   private Double longitude = null;
+  @SerializedName("phone")
   private String phone = null;
+  @SerializedName("site_name")
   private String siteName = null;
 
   
   /**
    * Primary key.
    **/
-  public MemberLocation id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary key.")
-  @JsonProperty("id")
+  @ApiModelProperty(value = "Primary key.")
   public String getId() {
     return id;
   }
@@ -48,13 +49,7 @@ public class MemberLocation   {
   /**
    * The primary key of the related *Merchant*.
    **/
-  public MemberLocation membersId(String membersId) {
-    this.membersId = membersId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The primary key of the related *Merchant*.")
-  @JsonProperty("members_id")
+  @ApiModelProperty(value = "The primary key of the related *Merchant*.")
   public String getMembersId() {
     return membersId;
   }
@@ -66,13 +61,7 @@ public class MemberLocation   {
   /**
    * Street address.
    **/
-  public MemberLocation street1(String street1) {
-    this.street1 = street1;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Street address.")
-  @JsonProperty("street_1")
+  @ApiModelProperty(required = true, value = "Street address.")
   public String getStreet1() {
     return street1;
   }
@@ -84,13 +73,7 @@ public class MemberLocation   {
   /**
    * Street address continued.
    **/
-  public MemberLocation street2(String street2) {
-    this.street2 = street2;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Street address continued.")
-  @JsonProperty("street_2")
+  @ApiModelProperty(value = "Street address continued.")
   public String getStreet2() {
     return street2;
   }
@@ -102,13 +85,7 @@ public class MemberLocation   {
   /**
    * City.
    **/
-  public MemberLocation city(String city) {
-    this.city = city;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "City.")
-  @JsonProperty("city")
+  @ApiModelProperty(required = true, value = "City.")
   public String getCity() {
     return city;
   }
@@ -120,13 +97,7 @@ public class MemberLocation   {
   /**
    * State Identifier (2 char code).
    **/
-  public MemberLocation state(String state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "State Identifier (2 char code).")
-  @JsonProperty("state")
+  @ApiModelProperty(required = true, value = "State Identifier (2 char code).")
   public String getState() {
     return state;
   }
@@ -138,13 +109,7 @@ public class MemberLocation   {
   /**
    * Postal Code.
    **/
-  public MemberLocation zipcode(String zipcode) {
-    this.zipcode = zipcode;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Postal Code.")
-  @JsonProperty("zipcode")
+  @ApiModelProperty(required = true, value = "Postal Code.")
   public String getZipcode() {
     return zipcode;
   }
@@ -156,13 +121,7 @@ public class MemberLocation   {
   /**
    * Latitude.
    **/
-  public MemberLocation latitude(Double latitude) {
-    this.latitude = latitude;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Latitude.")
-  @JsonProperty("latitude")
+  @ApiModelProperty(value = "Latitude.")
   public Double getLatitude() {
     return latitude;
   }
@@ -174,13 +133,7 @@ public class MemberLocation   {
   /**
    * Longitude.
    **/
-  public MemberLocation longitude(Double longitude) {
-    this.longitude = longitude;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Longitude.")
-  @JsonProperty("longitude")
+  @ApiModelProperty(value = "Longitude.")
   public Double getLongitude() {
     return longitude;
   }
@@ -192,13 +145,7 @@ public class MemberLocation   {
   /**
    * Phone number.
    **/
-  public MemberLocation phone(String phone) {
-    this.phone = phone;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Phone number.")
-  @JsonProperty("phone")
+  @ApiModelProperty(value = "Phone number.")
   public String getPhone() {
     return phone;
   }
@@ -210,13 +157,7 @@ public class MemberLocation   {
   /**
    * Informal reference, an alias.
    **/
-  public MemberLocation siteName(String siteName) {
-    this.siteName = siteName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Informal reference, an alias.")
-  @JsonProperty("site_name")
+  @ApiModelProperty(value = "Informal reference, an alias.")
   public String getSiteName() {
     return siteName;
   }
@@ -227,63 +168,24 @@ public class MemberLocation   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MemberLocation memberLocation = (MemberLocation) o;
-    return Objects.equals(this.id, memberLocation.id) &&
-        Objects.equals(this.membersId, memberLocation.membersId) &&
-        Objects.equals(this.street1, memberLocation.street1) &&
-        Objects.equals(this.street2, memberLocation.street2) &&
-        Objects.equals(this.city, memberLocation.city) &&
-        Objects.equals(this.state, memberLocation.state) &&
-        Objects.equals(this.zipcode, memberLocation.zipcode) &&
-        Objects.equals(this.latitude, memberLocation.latitude) &&
-        Objects.equals(this.longitude, memberLocation.longitude) &&
-        Objects.equals(this.phone, memberLocation.phone) &&
-        Objects.equals(this.siteName, memberLocation.siteName);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, membersId, street1, street2, city, state, zipcode, latitude, longitude, phone, siteName);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberLocation {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    membersId: ").append(toIndentedString(membersId)).append("\n");
-    sb.append("    street1: ").append(toIndentedString(street1)).append("\n");
-    sb.append("    street2: ").append(toIndentedString(street2)).append("\n");
-    sb.append("    city: ").append(toIndentedString(city)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");
-    sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
-    sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
-    sb.append("}");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  membersId: ").append(membersId).append("\n");
+    sb.append("  street1: ").append(street1).append("\n");
+    sb.append("  street2: ").append(street2).append("\n");
+    sb.append("  city: ").append(city).append("\n");
+    sb.append("  state: ").append(state).append("\n");
+    sb.append("  zipcode: ").append(zipcode).append("\n");
+    sb.append("  latitude: ").append(latitude).append("\n");
+    sb.append("  longitude: ").append(longitude).append("\n");
+    sb.append("  phone: ").append(phone).append("\n");
+    sb.append("  siteName: ").append(siteName).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

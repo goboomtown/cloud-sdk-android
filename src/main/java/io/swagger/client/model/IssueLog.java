@@ -1,37 +1,32 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 
 
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class IssueLog   {
+@ApiModel(description = "")
+public class IssueLog  {
   
+  @SerializedName("id")
   private String id = null;
+  @SerializedName("issues_id")
   private String issuesId = null;
+  @SerializedName("diff_log")
   private String diffLog = null;
+  @SerializedName("notes")
   private String notes = null;
+  @SerializedName("created")
   private Date created = null;
 
   
   /**
    * Primary key.
    **/
-  public IssueLog id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary key.")
-  @JsonProperty("id")
+  @ApiModelProperty(value = "Primary key.")
   public String getId() {
     return id;
   }
@@ -43,13 +38,7 @@ public class IssueLog   {
   /**
    * The primary key of the related *Issue*.
    **/
-  public IssueLog issuesId(String issuesId) {
-    this.issuesId = issuesId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The primary key of the related *Issue*.")
-  @JsonProperty("issues_id")
+  @ApiModelProperty(required = true, value = "The primary key of the related *Issue*.")
   public String getIssuesId() {
     return issuesId;
   }
@@ -61,13 +50,7 @@ public class IssueLog   {
   /**
    * Differences.
    **/
-  public IssueLog diffLog(String diffLog) {
-    this.diffLog = diffLog;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Differences.")
-  @JsonProperty("diff_log")
+  @ApiModelProperty(value = "Differences.")
   public String getDiffLog() {
     return diffLog;
   }
@@ -79,13 +62,7 @@ public class IssueLog   {
   /**
    * Notes.
    **/
-  public IssueLog notes(String notes) {
-    this.notes = notes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Notes.")
-  @JsonProperty("notes")
+  @ApiModelProperty(value = "Notes.")
   public String getNotes() {
     return notes;
   }
@@ -97,13 +74,7 @@ public class IssueLog   {
   /**
    * Date created.
    **/
-  public IssueLog created(Date created) {
-    this.created = created;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date created.")
-  @JsonProperty("created")
+  @ApiModelProperty(value = "Date created.")
   public Date getCreated() {
     return created;
   }
@@ -114,51 +85,18 @@ public class IssueLog   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IssueLog issueLog = (IssueLog) o;
-    return Objects.equals(this.id, issueLog.id) &&
-        Objects.equals(this.issuesId, issueLog.issuesId) &&
-        Objects.equals(this.diffLog, issueLog.diffLog) &&
-        Objects.equals(this.notes, issueLog.notes) &&
-        Objects.equals(this.created, issueLog.created);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, issuesId, diffLog, notes, created);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class IssueLog {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    issuesId: ").append(toIndentedString(issuesId)).append("\n");
-    sb.append("    diffLog: ").append(toIndentedString(diffLog)).append("\n");
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("}");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  issuesId: ").append(issuesId).append("\n");
+    sb.append("  diffLog: ").append(diffLog).append("\n");
+    sb.append("  notes: ").append(notes).append("\n");
+    sb.append("  created: ").append(created).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

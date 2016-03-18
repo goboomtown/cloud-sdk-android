@@ -1,41 +1,38 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BaseResponse;
 import io.swagger.client.model.MemberTuple;
 import java.util.Date;
 
 
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class MemberCreateResponse extends BaseResponse  {
+@ApiModel(description = "")
+public class MemberCreateResponse extends BaseResponse {
   
+  @SerializedName("pages")
   private Integer pages = null;
+  @SerializedName("success")
   private Boolean success = null;
+  @SerializedName("current_server_time")
   private Date currentServerTime = null;
+  @SerializedName("totalCount")
   private Integer totalCount = null;
+  @SerializedName("returned")
   private Integer returned = null;
+  @SerializedName("message")
   private String message = null;
+  @SerializedName("results")
   private MemberTuple results = null;
 
   
   /**
    * Total pages available.
    **/
-  public MemberCreateResponse pages(Integer pages) {
-    this.pages = pages;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Total pages available.")
-  @JsonProperty("pages")
+  @ApiModelProperty(value = "Total pages available.")
   public Integer getPages() {
     return pages;
   }
@@ -47,13 +44,7 @@ public class MemberCreateResponse extends BaseResponse  {
   /**
    * Indicates success of the operation.
    **/
-  public MemberCreateResponse success(Boolean success) {
-    this.success = success;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Indicates success of the operation.")
-  @JsonProperty("success")
+  @ApiModelProperty(value = "Indicates success of the operation.")
   public Boolean getSuccess() {
     return success;
   }
@@ -64,13 +55,7 @@ public class MemberCreateResponse extends BaseResponse  {
   
   /**
    **/
-  public MemberCreateResponse currentServerTime(Date currentServerTime) {
-    this.currentServerTime = currentServerTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("current_server_time")
+  @ApiModelProperty(value = "")
   public Date getCurrentServerTime() {
     return currentServerTime;
   }
@@ -82,13 +67,7 @@ public class MemberCreateResponse extends BaseResponse  {
   /**
    * Total records available.
    **/
-  public MemberCreateResponse totalCount(Integer totalCount) {
-    this.totalCount = totalCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Total records available.")
-  @JsonProperty("totalCount")
+  @ApiModelProperty(value = "Total records available.")
   public Integer getTotalCount() {
     return totalCount;
   }
@@ -100,13 +79,7 @@ public class MemberCreateResponse extends BaseResponse  {
   /**
    * Total records retrieved.
    **/
-  public MemberCreateResponse returned(Integer returned) {
-    this.returned = returned;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Total records retrieved.")
-  @JsonProperty("returned")
+  @ApiModelProperty(value = "Total records retrieved.")
   public Integer getReturned() {
     return returned;
   }
@@ -117,13 +90,7 @@ public class MemberCreateResponse extends BaseResponse  {
   
   /**
    **/
-  public MemberCreateResponse message(String message) {
-    this.message = message;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("message")
+  @ApiModelProperty(value = "")
   public String getMessage() {
     return message;
   }
@@ -134,13 +101,7 @@ public class MemberCreateResponse extends BaseResponse  {
   
   /**
    **/
-  public MemberCreateResponse results(MemberTuple results) {
-    this.results = results;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("results")
+  @ApiModelProperty(value = "")
   public MemberTuple getResults() {
     return results;
   }
@@ -151,56 +112,20 @@ public class MemberCreateResponse extends BaseResponse  {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MemberCreateResponse memberCreateResponse = (MemberCreateResponse) o;
-    return Objects.equals(this.pages, memberCreateResponse.pages) &&
-        Objects.equals(this.success, memberCreateResponse.success) &&
-        Objects.equals(this.currentServerTime, memberCreateResponse.currentServerTime) &&
-        Objects.equals(this.totalCount, memberCreateResponse.totalCount) &&
-        Objects.equals(this.returned, memberCreateResponse.returned) &&
-        Objects.equals(this.message, memberCreateResponse.message) &&
-        Objects.equals(this.results, memberCreateResponse.results) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(pages, success, currentServerTime, totalCount, returned, message, results, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberCreateResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    pages: ").append(toIndentedString(pages)).append("\n");
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    currentServerTime: ").append(toIndentedString(currentServerTime)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    returned: ").append(toIndentedString(returned)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    results: ").append(toIndentedString(results)).append("\n");
-    sb.append("}");
+    sb.append("  " + super.toString()).append("\n");
+    sb.append("  pages: ").append(pages).append("\n");
+    sb.append("  success: ").append(success).append("\n");
+    sb.append("  currentServerTime: ").append(currentServerTime).append("\n");
+    sb.append("  totalCount: ").append(totalCount).append("\n");
+    sb.append("  returned: ").append(returned).append("\n");
+    sb.append("  message: ").append(message).append("\n");
+    sb.append("  results: ").append(results).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

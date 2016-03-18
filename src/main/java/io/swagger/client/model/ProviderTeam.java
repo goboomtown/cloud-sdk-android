@@ -1,56 +1,70 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 
 
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class ProviderTeam   {
+@ApiModel(description = "")
+public class ProviderTeam  {
   
+  @SerializedName("id")
   private String id = null;
+  @SerializedName("name")
   private String name = null;
+  @SerializedName("nickname")
   private String nickname = null;
+  @SerializedName("description")
   private String description = null;
+  @SerializedName("email")
   private String email = null;
+  @SerializedName("phone")
   private String phone = null;
+  @SerializedName("avatar")
   private String avatar = null;
+  @SerializedName("auto_assign_route")
   private Boolean autoAssignRoute = null;
+  @SerializedName("auto_assign_sponsor")
   private Boolean autoAssignSponsor = null;
+  @SerializedName("status")
   private String status = null;
+  @SerializedName("type")
   private String type = null;
+  @SerializedName("exclusive")
   private Boolean exclusive = null;
+  @SerializedName("published")
   private Boolean published = null;
+  @SerializedName("published_name")
   private String publishedName = null;
+  @SerializedName("private_label")
   private Boolean privateLabel = null;
+  @SerializedName("brand_color1")
   private String brandColor1 = null;
+  @SerializedName("brand_logo_1x")
   private String brandLogo1x = null;
+  @SerializedName("brand_logo_2x")
   private String brandLogo2x = null;
+  @SerializedName("brand_logo_3x")
   private String brandLogo3x = null;
+  @SerializedName("support_email")
   private String supportEmail = null;
+  @SerializedName("support_phone")
   private String supportPhone = null;
+  @SerializedName("support_url")
   private String supportUrl = null;
+  @SerializedName("created")
   private Date created = null;
+  @SerializedName("updated")
   private Date updated = null;
 
   
   /**
    * Primary key.
    **/
-  public ProviderTeam id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary key.")
-  @JsonProperty("id")
+  @ApiModelProperty(value = "Primary key.")
   public String getId() {
     return id;
   }
@@ -62,13 +76,7 @@ public class ProviderTeam   {
   /**
    * Name.
    **/
-  public ProviderTeam name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Name.")
-  @JsonProperty("name")
+  @ApiModelProperty(value = "Name.")
   public String getName() {
     return name;
   }
@@ -80,13 +88,7 @@ public class ProviderTeam   {
   /**
    * Hashtag nickname for group mentions in chat.
    **/
-  public ProviderTeam nickname(String nickname) {
-    this.nickname = nickname;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Hashtag nickname for group mentions in chat.")
-  @JsonProperty("nickname")
+  @ApiModelProperty(value = "Hashtag nickname for group mentions in chat.")
   public String getNickname() {
     return nickname;
   }
@@ -98,13 +100,7 @@ public class ProviderTeam   {
   /**
    * Description.
    **/
-  public ProviderTeam description(String description) {
-    this.description = description;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Description.")
-  @JsonProperty("description")
+  @ApiModelProperty(value = "Description.")
   public String getDescription() {
     return description;
   }
@@ -116,13 +112,7 @@ public class ProviderTeam   {
   /**
    * Email address.
    **/
-  public ProviderTeam email(String email) {
-    this.email = email;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Email address.")
-  @JsonProperty("email")
+  @ApiModelProperty(value = "Email address.")
   public String getEmail() {
     return email;
   }
@@ -134,13 +124,7 @@ public class ProviderTeam   {
   /**
    * Primary contact phone number.
    **/
-  public ProviderTeam phone(String phone) {
-    this.phone = phone;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary contact phone number.")
-  @JsonProperty("phone")
+  @ApiModelProperty(value = "Primary contact phone number.")
   public String getPhone() {
     return phone;
   }
@@ -152,13 +136,7 @@ public class ProviderTeam   {
   /**
    * URL to an avatar.
    **/
-  public ProviderTeam avatar(String avatar) {
-    this.avatar = avatar;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "URL to an avatar.")
-  @JsonProperty("avatar")
+  @ApiModelProperty(value = "URL to an avatar.")
   public String getAvatar() {
     return avatar;
   }
@@ -170,13 +148,7 @@ public class ProviderTeam   {
   /**
    * Automatically routes related merchant issues to this ProviderTeam.
    **/
-  public ProviderTeam autoAssignRoute(Boolean autoAssignRoute) {
-    this.autoAssignRoute = autoAssignRoute;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Automatically routes related merchant issues to this ProviderTeam.")
-  @JsonProperty("auto_assign_route")
+  @ApiModelProperty(value = "Automatically routes related merchant issues to this ProviderTeam.")
   public Boolean getAutoAssignRoute() {
     return autoAssignRoute;
   }
@@ -188,13 +160,7 @@ public class ProviderTeam   {
   /**
    * Automatically assigns this ProviderTeam as the sponsor for related merchants.
    **/
-  public ProviderTeam autoAssignSponsor(Boolean autoAssignSponsor) {
-    this.autoAssignSponsor = autoAssignSponsor;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Automatically assigns this ProviderTeam as the sponsor for related merchants.")
-  @JsonProperty("auto_assign_sponsor")
+  @ApiModelProperty(value = "Automatically assigns this ProviderTeam as the sponsor for related merchants.")
   public Boolean getAutoAssignSponsor() {
     return autoAssignSponsor;
   }
@@ -206,13 +172,7 @@ public class ProviderTeam   {
   /**
    * Status.
    **/
-  public ProviderTeam status(String status) {
-    this.status = status;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Status.")
-  @JsonProperty("status")
+  @ApiModelProperty(value = "Status.")
   public String getStatus() {
     return status;
   }
@@ -224,13 +184,7 @@ public class ProviderTeam   {
   /**
    * Type / Category.
    **/
-  public ProviderTeam type(String type) {
-    this.type = type;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Type / Category.")
-  @JsonProperty("type")
+  @ApiModelProperty(value = "Type / Category.")
   public String getType() {
     return type;
   }
@@ -242,13 +196,7 @@ public class ProviderTeam   {
   /**
    * Exclusive within it's type / category.
    **/
-  public ProviderTeam exclusive(Boolean exclusive) {
-    this.exclusive = exclusive;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Exclusive within it's type / category.")
-  @JsonProperty("exclusive")
+  @ApiModelProperty(value = "Exclusive within it's type / category.")
   public Boolean getExclusive() {
     return exclusive;
   }
@@ -260,13 +208,7 @@ public class ProviderTeam   {
   /**
    * Published to the Connect App.
    **/
-  public ProviderTeam published(Boolean published) {
-    this.published = published;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Published to the Connect App.")
-  @JsonProperty("published")
+  @ApiModelProperty(value = "Published to the Connect App.")
   public Boolean getPublished() {
     return published;
   }
@@ -278,13 +220,7 @@ public class ProviderTeam   {
   /**
    * Name, as publushed in the Connect App.
    **/
-  public ProviderTeam publishedName(String publishedName) {
-    this.publishedName = publishedName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Name, as publushed in the Connect App.")
-  @JsonProperty("published_name")
+  @ApiModelProperty(value = "Name, as publushed in the Connect App.")
   public String getPublishedName() {
     return publishedName;
   }
@@ -296,13 +232,7 @@ public class ProviderTeam   {
   /**
    * Enable private label branding.
    **/
-  public ProviderTeam privateLabel(Boolean privateLabel) {
-    this.privateLabel = privateLabel;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Enable private label branding.")
-  @JsonProperty("private_label")
+  @ApiModelProperty(value = "Enable private label branding.")
   public Boolean getPrivateLabel() {
     return privateLabel;
   }
@@ -314,13 +244,7 @@ public class ProviderTeam   {
   /**
    * Private label brand color, used if private_label is true.
    **/
-  public ProviderTeam brandColor1(String brandColor1) {
-    this.brandColor1 = brandColor1;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Private label brand color, used if private_label is true.")
-  @JsonProperty("brand_color1")
+  @ApiModelProperty(value = "Private label brand color, used if private_label is true.")
   public String getBrandColor1() {
     return brandColor1;
   }
@@ -332,13 +256,7 @@ public class ProviderTeam   {
   /**
    * Private label logo, used if private_label is true.
    **/
-  public ProviderTeam brandLogo1x(String brandLogo1x) {
-    this.brandLogo1x = brandLogo1x;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Private label logo, used if private_label is true.")
-  @JsonProperty("brand_logo_1x")
+  @ApiModelProperty(value = "Private label logo, used if private_label is true.")
   public String getBrandLogo1x() {
     return brandLogo1x;
   }
@@ -350,13 +268,7 @@ public class ProviderTeam   {
   /**
    * Private label logo (x2), used if private_label is true.
    **/
-  public ProviderTeam brandLogo2x(String brandLogo2x) {
-    this.brandLogo2x = brandLogo2x;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Private label logo (x2), used if private_label is true.")
-  @JsonProperty("brand_logo_2x")
+  @ApiModelProperty(value = "Private label logo (x2), used if private_label is true.")
   public String getBrandLogo2x() {
     return brandLogo2x;
   }
@@ -368,13 +280,7 @@ public class ProviderTeam   {
   /**
    * Private label logo (x3), used if private_label is true.
    **/
-  public ProviderTeam brandLogo3x(String brandLogo3x) {
-    this.brandLogo3x = brandLogo3x;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Private label logo (x3), used if private_label is true.")
-  @JsonProperty("brand_logo_3x")
+  @ApiModelProperty(value = "Private label logo (x3), used if private_label is true.")
   public String getBrandLogo3x() {
     return brandLogo3x;
   }
@@ -386,13 +292,7 @@ public class ProviderTeam   {
   /**
    * Primary support email address.
    **/
-  public ProviderTeam supportEmail(String supportEmail) {
-    this.supportEmail = supportEmail;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary support email address.")
-  @JsonProperty("support_email")
+  @ApiModelProperty(value = "Primary support email address.")
   public String getSupportEmail() {
     return supportEmail;
   }
@@ -404,13 +304,7 @@ public class ProviderTeam   {
   /**
    * Primary support phone number.
    **/
-  public ProviderTeam supportPhone(String supportPhone) {
-    this.supportPhone = supportPhone;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary support phone number.")
-  @JsonProperty("support_phone")
+  @ApiModelProperty(value = "Primary support phone number.")
   public String getSupportPhone() {
     return supportPhone;
   }
@@ -422,13 +316,7 @@ public class ProviderTeam   {
   /**
    * Primary support website.
    **/
-  public ProviderTeam supportUrl(String supportUrl) {
-    this.supportUrl = supportUrl;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary support website.")
-  @JsonProperty("support_url")
+  @ApiModelProperty(value = "Primary support website.")
   public String getSupportUrl() {
     return supportUrl;
   }
@@ -440,13 +328,7 @@ public class ProviderTeam   {
   /**
    * Date created.
    **/
-  public ProviderTeam created(Date created) {
-    this.created = created;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date created.")
-  @JsonProperty("created")
+  @ApiModelProperty(value = "Date created.")
   public Date getCreated() {
     return created;
   }
@@ -458,13 +340,7 @@ public class ProviderTeam   {
   /**
    * Date last updated.
    **/
-  public ProviderTeam updated(Date updated) {
-    this.updated = updated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date last updated.")
-  @JsonProperty("updated")
+  @ApiModelProperty(value = "Date last updated.")
   public Date getUpdated() {
     return updated;
   }
@@ -475,89 +351,37 @@ public class ProviderTeam   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ProviderTeam providerTeam = (ProviderTeam) o;
-    return Objects.equals(this.id, providerTeam.id) &&
-        Objects.equals(this.name, providerTeam.name) &&
-        Objects.equals(this.nickname, providerTeam.nickname) &&
-        Objects.equals(this.description, providerTeam.description) &&
-        Objects.equals(this.email, providerTeam.email) &&
-        Objects.equals(this.phone, providerTeam.phone) &&
-        Objects.equals(this.avatar, providerTeam.avatar) &&
-        Objects.equals(this.autoAssignRoute, providerTeam.autoAssignRoute) &&
-        Objects.equals(this.autoAssignSponsor, providerTeam.autoAssignSponsor) &&
-        Objects.equals(this.status, providerTeam.status) &&
-        Objects.equals(this.type, providerTeam.type) &&
-        Objects.equals(this.exclusive, providerTeam.exclusive) &&
-        Objects.equals(this.published, providerTeam.published) &&
-        Objects.equals(this.publishedName, providerTeam.publishedName) &&
-        Objects.equals(this.privateLabel, providerTeam.privateLabel) &&
-        Objects.equals(this.brandColor1, providerTeam.brandColor1) &&
-        Objects.equals(this.brandLogo1x, providerTeam.brandLogo1x) &&
-        Objects.equals(this.brandLogo2x, providerTeam.brandLogo2x) &&
-        Objects.equals(this.brandLogo3x, providerTeam.brandLogo3x) &&
-        Objects.equals(this.supportEmail, providerTeam.supportEmail) &&
-        Objects.equals(this.supportPhone, providerTeam.supportPhone) &&
-        Objects.equals(this.supportUrl, providerTeam.supportUrl) &&
-        Objects.equals(this.created, providerTeam.created) &&
-        Objects.equals(this.updated, providerTeam.updated);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, name, nickname, description, email, phone, avatar, autoAssignRoute, autoAssignSponsor, status, type, exclusive, published, publishedName, privateLabel, brandColor1, brandLogo1x, brandLogo2x, brandLogo3x, supportEmail, supportPhone, supportUrl, created, updated);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProviderTeam {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    avatar: ").append(toIndentedString(avatar)).append("\n");
-    sb.append("    autoAssignRoute: ").append(toIndentedString(autoAssignRoute)).append("\n");
-    sb.append("    autoAssignSponsor: ").append(toIndentedString(autoAssignSponsor)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    exclusive: ").append(toIndentedString(exclusive)).append("\n");
-    sb.append("    published: ").append(toIndentedString(published)).append("\n");
-    sb.append("    publishedName: ").append(toIndentedString(publishedName)).append("\n");
-    sb.append("    privateLabel: ").append(toIndentedString(privateLabel)).append("\n");
-    sb.append("    brandColor1: ").append(toIndentedString(brandColor1)).append("\n");
-    sb.append("    brandLogo1x: ").append(toIndentedString(brandLogo1x)).append("\n");
-    sb.append("    brandLogo2x: ").append(toIndentedString(brandLogo2x)).append("\n");
-    sb.append("    brandLogo3x: ").append(toIndentedString(brandLogo3x)).append("\n");
-    sb.append("    supportEmail: ").append(toIndentedString(supportEmail)).append("\n");
-    sb.append("    supportPhone: ").append(toIndentedString(supportPhone)).append("\n");
-    sb.append("    supportUrl: ").append(toIndentedString(supportUrl)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-    sb.append("}");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  nickname: ").append(nickname).append("\n");
+    sb.append("  description: ").append(description).append("\n");
+    sb.append("  email: ").append(email).append("\n");
+    sb.append("  phone: ").append(phone).append("\n");
+    sb.append("  avatar: ").append(avatar).append("\n");
+    sb.append("  autoAssignRoute: ").append(autoAssignRoute).append("\n");
+    sb.append("  autoAssignSponsor: ").append(autoAssignSponsor).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("  type: ").append(type).append("\n");
+    sb.append("  exclusive: ").append(exclusive).append("\n");
+    sb.append("  published: ").append(published).append("\n");
+    sb.append("  publishedName: ").append(publishedName).append("\n");
+    sb.append("  privateLabel: ").append(privateLabel).append("\n");
+    sb.append("  brandColor1: ").append(brandColor1).append("\n");
+    sb.append("  brandLogo1x: ").append(brandLogo1x).append("\n");
+    sb.append("  brandLogo2x: ").append(brandLogo2x).append("\n");
+    sb.append("  brandLogo3x: ").append(brandLogo3x).append("\n");
+    sb.append("  supportEmail: ").append(supportEmail).append("\n");
+    sb.append("  supportPhone: ").append(supportPhone).append("\n");
+    sb.append("  supportUrl: ").append(supportUrl).append("\n");
+    sb.append("  created: ").append(created).append("\n");
+    sb.append("  updated: ").append(updated).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

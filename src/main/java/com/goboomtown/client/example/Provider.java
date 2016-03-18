@@ -152,7 +152,7 @@ public final class Provider {
                 teams.add(Team.fromEntity(entity));
             }
         } else {
-            throw new ApiException(providerTeams.getMessage());
+            throw new ApiException(0, providerTeams.getMessage());
         }
         return teams;
     }
@@ -166,7 +166,7 @@ public final class Provider {
         if (providerTeam.getSuccess() != null && providerTeam.getSuccess() && providerTeam.getResults().size() == 1) {
             return Team.fromEntity(providerTeam.getResults().get(0));
         } else {
-            throw new ApiException(providerTeam.getMessage());
+            throw new ApiException(0, providerTeam.getMessage());
         }
     }
 
@@ -182,7 +182,7 @@ public final class Provider {
                 merchants.add(Merchant.fromEntity(entity));
             }
         } else {
-            throw new ApiException(providerMembers.getMessage());
+            throw new ApiException(0, providerMembers.getMessage());
         }
         return merchants;
     }
@@ -218,7 +218,7 @@ public final class Provider {
                 issues.add(com.goboomtown.client.example.Issue.fromEntity(entity));
             }
         } else {
-            throw new ApiException(issuesResponse.getMessage());
+            throw new ApiException(0, issuesResponse.getMessage());
         }
         return issues;
     }
@@ -232,7 +232,7 @@ public final class Provider {
         if (issuesResponse.getSuccess() != null && issuesResponse.getSuccess() && issuesResponse.getResults().size() == 1) {
             return com.goboomtown.client.example.Issue.fromEntity(issuesResponse.getResults().get(0));
         } else {
-            throw new ApiException(issuesResponse.getMessage());
+            throw new ApiException(0, issuesResponse.getMessage());
         }
     }
 

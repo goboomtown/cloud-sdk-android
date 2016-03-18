@@ -1,45 +1,48 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 
 
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class Member   {
+@ApiModel(description = "")
+public class Member  {
   
+  @SerializedName("id")
   private String id = null;
+  @SerializedName("name")
   private String name = null;
+  @SerializedName("name_legal")
   private String nameLegal = null;
+  @SerializedName("street_1")
   private String street1 = null;
+  @SerializedName("street_2")
   private String street2 = null;
+  @SerializedName("city")
   private String city = null;
+  @SerializedName("state")
   private String state = null;
+  @SerializedName("zipcode")
   private String zipcode = null;
+  @SerializedName("email")
   private String email = null;
+  @SerializedName("phone")
   private String phone = null;
+  @SerializedName("industry")
   private String industry = null;
+  @SerializedName("status")
   private String status = null;
+  @SerializedName("created")
   private Date created = null;
 
   
   /**
    * Primary key.
    **/
-  public Member id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Primary key.")
-  @JsonProperty("id")
+  @ApiModelProperty(value = "Primary key.")
   public String getId() {
     return id;
   }
@@ -51,13 +54,7 @@ public class Member   {
   /**
    * Business name.
    **/
-  public Member name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Business name.")
-  @JsonProperty("name")
+  @ApiModelProperty(required = true, value = "Business name.")
   public String getName() {
     return name;
   }
@@ -69,13 +66,7 @@ public class Member   {
   /**
    * Business legal name.
    **/
-  public Member nameLegal(String nameLegal) {
-    this.nameLegal = nameLegal;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Business legal name.")
-  @JsonProperty("name_legal")
+  @ApiModelProperty(value = "Business legal name.")
   public String getNameLegal() {
     return nameLegal;
   }
@@ -87,13 +78,7 @@ public class Member   {
   /**
    * Street address.
    **/
-  public Member street1(String street1) {
-    this.street1 = street1;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Street address.")
-  @JsonProperty("street_1")
+  @ApiModelProperty(value = "Street address.")
   public String getStreet1() {
     return street1;
   }
@@ -105,13 +90,7 @@ public class Member   {
   /**
    * Street address continued.
    **/
-  public Member street2(String street2) {
-    this.street2 = street2;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Street address continued.")
-  @JsonProperty("street_2")
+  @ApiModelProperty(value = "Street address continued.")
   public String getStreet2() {
     return street2;
   }
@@ -123,13 +102,7 @@ public class Member   {
   /**
    * City.
    **/
-  public Member city(String city) {
-    this.city = city;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "City.")
-  @JsonProperty("city")
+  @ApiModelProperty(value = "City.")
   public String getCity() {
     return city;
   }
@@ -141,13 +114,7 @@ public class Member   {
   /**
    * State Identifier (2 char code).
    **/
-  public Member state(String state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "State Identifier (2 char code).")
-  @JsonProperty("state")
+  @ApiModelProperty(value = "State Identifier (2 char code).")
   public String getState() {
     return state;
   }
@@ -159,13 +126,7 @@ public class Member   {
   /**
    * Postal Code.
    **/
-  public Member zipcode(String zipcode) {
-    this.zipcode = zipcode;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Postal Code.")
-  @JsonProperty("zipcode")
+  @ApiModelProperty(required = true, value = "Postal Code.")
   public String getZipcode() {
     return zipcode;
   }
@@ -177,13 +138,7 @@ public class Member   {
   /**
    * Email address.
    **/
-  public Member email(String email) {
-    this.email = email;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Email address.")
-  @JsonProperty("email")
+  @ApiModelProperty(required = true, value = "Email address.")
   public String getEmail() {
     return email;
   }
@@ -195,13 +150,7 @@ public class Member   {
   /**
    * Phone number.
    **/
-  public Member phone(String phone) {
-    this.phone = phone;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Phone number.")
-  @JsonProperty("phone")
+  @ApiModelProperty(value = "Phone number.")
   public String getPhone() {
     return phone;
   }
@@ -213,13 +162,7 @@ public class Member   {
   /**
    * Industry.
    **/
-  public Member industry(String industry) {
-    this.industry = industry;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Industry.")
-  @JsonProperty("industry")
+  @ApiModelProperty(value = "Industry.")
   public String getIndustry() {
     return industry;
   }
@@ -231,13 +174,7 @@ public class Member   {
   /**
    * Status.
    **/
-  public Member status(String status) {
-    this.status = status;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Status.")
-  @JsonProperty("status")
+  @ApiModelProperty(value = "Status.")
   public String getStatus() {
     return status;
   }
@@ -249,13 +186,7 @@ public class Member   {
   /**
    * Date created.
    **/
-  public Member created(Date created) {
-    this.created = created;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date created.")
-  @JsonProperty("created")
+  @ApiModelProperty(value = "Date created.")
   public Date getCreated() {
     return created;
   }
@@ -266,67 +197,26 @@ public class Member   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Member member = (Member) o;
-    return Objects.equals(this.id, member.id) &&
-        Objects.equals(this.name, member.name) &&
-        Objects.equals(this.nameLegal, member.nameLegal) &&
-        Objects.equals(this.street1, member.street1) &&
-        Objects.equals(this.street2, member.street2) &&
-        Objects.equals(this.city, member.city) &&
-        Objects.equals(this.state, member.state) &&
-        Objects.equals(this.zipcode, member.zipcode) &&
-        Objects.equals(this.email, member.email) &&
-        Objects.equals(this.phone, member.phone) &&
-        Objects.equals(this.industry, member.industry) &&
-        Objects.equals(this.status, member.status) &&
-        Objects.equals(this.created, member.created);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, name, nameLegal, street1, street2, city, state, zipcode, email, phone, industry, status, created);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Member {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nameLegal: ").append(toIndentedString(nameLegal)).append("\n");
-    sb.append("    street1: ").append(toIndentedString(street1)).append("\n");
-    sb.append("    street2: ").append(toIndentedString(street2)).append("\n");
-    sb.append("    city: ").append(toIndentedString(city)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("}");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  nameLegal: ").append(nameLegal).append("\n");
+    sb.append("  street1: ").append(street1).append("\n");
+    sb.append("  street2: ").append(street2).append("\n");
+    sb.append("  city: ").append(city).append("\n");
+    sb.append("  state: ").append(state).append("\n");
+    sb.append("  zipcode: ").append(zipcode).append("\n");
+    sb.append("  email: ").append(email).append("\n");
+    sb.append("  phone: ").append(phone).append("\n");
+    sb.append("  industry: ").append(industry).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("  created: ").append(created).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 

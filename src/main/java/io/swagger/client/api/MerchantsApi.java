@@ -1,21 +1,10 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.ApiClient;
-import io.swagger.client.Configuration;
+import io.swagger.client.ApiInvoker;
 import io.swagger.client.Pair;
-
-import javax.ws.rs.core.GenericType;
-
-import io.swagger.client.model.MemberCreateResponse;
-import io.swagger.client.model.Error;
-import io.swagger.client.model.MemberCreateRequest;
-import io.swagger.client.model.MemberResponse;
-import io.swagger.client.model.MemberUserResponse;
-import io.swagger.client.model.MemberLocationResponse;
-import io.swagger.client.model.EnumerationItemResponse;
-
-
+import io.swagger.client.model.*;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,25 +12,24 @@ import java.util.List;
 import java.util.Map;
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-
 public class MerchantsApi {
-  private ApiClient apiClient;
+  String basePath = "https://api.goboomtown.com/api/v2";
+  ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
-  public MerchantsApi() {
-    this(Configuration.getDefaultApiClient());
+  public void addHeader(String key, String value) {
+    getInvoker().addDefaultHeader(key, value);
   }
 
-  public MerchantsApi(ApiClient apiClient) {
-    this.apiClient = apiClient;
+  public ApiInvoker getInvoker() {
+    return apiInvoker;
   }
 
-  public ApiClient getApiClient() {
-    return apiClient;
+  public void setBasePath(String basePath) {
+    this.basePath = basePath;
   }
 
-  public void setApiClient(ApiClient apiClient) {
-    this.apiClient = apiClient;
+  public String getBasePath() {
+    return basePath;
   }
 
   
@@ -50,46 +38,57 @@ public class MerchantsApi {
    * Creates a *Merchant* and optionally *MerchantLocation* and *MerchantUser*
    * @param body The *Merchant* to create
    * @return MemberCreateResponse
-   * @throws ApiException if fails to make API call
    */
-  public MemberCreateResponse createMember(MemberCreateRequest body) throws ApiException {
+  public MemberCreateResponse  createMember (MemberCreateRequest body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'body' is set
     if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling createMember");
+       throw new ApiException(400, "Missing the required parameter 'body' when calling createMember");
     }
     
+
     // create path and map variables
     String localVarPath = "/members/create".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<MemberCreateResponse> localVarReturnType = new GenericType<MemberCreateResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (MemberCreateResponse) ApiInvoker.deserialize(localVarResponse, "", MemberCreateResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
   /**
@@ -97,47 +96,57 @@ public class MerchantsApi {
    * Returns a *Merchant* ≈
    * @param memberId The primary key of the *Merchant*
    * @return MemberResponse
-   * @throws ApiException if fails to make API call
    */
-  public MemberResponse getMember(String memberId) throws ApiException {
+  public MemberResponse  getMember (String memberId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMember");
+       throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMember");
     }
     
+
     // create path and map variables
-    String localVarPath = "/members/get/{member_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "member_id" + "\\}", apiClient.escapeString(memberId.toString()));
+    String localVarPath = "/members/get/{member_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "member_id" + "\\}", apiInvoker.escapeString(memberId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<MemberResponse> localVarReturnType = new GenericType<MemberResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (MemberResponse) ApiInvoker.deserialize(localVarResponse, "", MemberResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
   /**
@@ -145,47 +154,57 @@ public class MerchantsApi {
    * Returns a collection of *MerchantUsers* belonging to a *MerchantLocation*
    * @param memberId The primary key of the *Merchant*
    * @return MemberUserResponse
-   * @throws ApiException if fails to make API call
    */
-  public MemberUserResponse getMemberLocationUsers(String memberId) throws ApiException {
+  public MemberUserResponse  getMemberLocationUsers (String memberId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMemberLocationUsers");
+       throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMemberLocationUsers");
     }
     
+
     // create path and map variables
-    String localVarPath = "/members/location/users/{member_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "member_id" + "\\}", apiClient.escapeString(memberId.toString()));
+    String localVarPath = "/members/location/users/{member_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "member_id" + "\\}", apiInvoker.escapeString(memberId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<MemberUserResponse> localVarReturnType = new GenericType<MemberUserResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (MemberUserResponse) ApiInvoker.deserialize(localVarResponse, "", MemberUserResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
   /**
@@ -194,131 +213,163 @@ public class MerchantsApi {
    * @param memberId The primary key of the *Merchant*
    * @param membersLocationsId An optional members_locations_id to filter the results with
    * @return MemberLocationResponse
-   * @throws ApiException if fails to make API call
    */
-  public MemberLocationResponse getMemberLocations(String memberId, String membersLocationsId) throws ApiException {
+  public MemberLocationResponse  getMemberLocations (String memberId, String membersLocationsId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMemberLocations");
+       throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMemberLocations");
     }
     
+
     // create path and map variables
-    String localVarPath = "/members/location/get/{member_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "member_id" + "\\}", apiClient.escapeString(memberId.toString()));
+    String localVarPath = "/members/location/get/{member_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "member_id" + "\\}", apiInvoker.escapeString(memberId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_locations_id", membersLocationsId));
+    localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "members_locations_id", membersLocationsId));
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<MemberLocationResponse> localVarReturnType = new GenericType<MemberLocationResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (MemberLocationResponse) ApiInvoker.deserialize(localVarResponse, "", MemberLocationResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
   /**
    * Returns collection of industries
    * Returns the industries available for a *Merchant*
    * @return EnumerationItemResponse
-   * @throws ApiException if fails to make API call
    */
-  public EnumerationItemResponse getMemberMetaIndustries() throws ApiException {
+  public EnumerationItemResponse  getMemberMetaIndustries () throws ApiException {
     Object localVarPostBody = null;
     
+
     // create path and map variables
     String localVarPath = "/members/meta/industries".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<EnumerationItemResponse> localVarReturnType = new GenericType<EnumerationItemResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (EnumerationItemResponse) ApiInvoker.deserialize(localVarResponse, "", EnumerationItemResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
   /**
    * Returns collection of statuses
    * Returns the statuses available for a *Merchant* or *MerchantUsers*
    * @return EnumerationItemResponse
-   * @throws ApiException if fails to make API call
    */
-  public EnumerationItemResponse getMemberMetaStatuses() throws ApiException {
+  public EnumerationItemResponse  getMemberMetaStatuses () throws ApiException {
     Object localVarPostBody = null;
     
+
     // create path and map variables
     String localVarPath = "/members/meta/statuses".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<EnumerationItemResponse> localVarReturnType = new GenericType<EnumerationItemResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (EnumerationItemResponse) ApiInvoker.deserialize(localVarResponse, "", EnumerationItemResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
   /**
@@ -327,49 +378,59 @@ public class MerchantsApi {
    * @param memberId The id of the *Merchant*
    * @param userId Optional user_id to filter the results with
    * @return MemberUserResponse
-   * @throws ApiException if fails to make API call
    */
-  public MemberUserResponse getMemberUsers(String memberId, String userId) throws ApiException {
+  public MemberUserResponse  getMemberUsers (String memberId, String userId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'memberId' is set
     if (memberId == null) {
-      throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMemberUsers");
+       throw new ApiException(400, "Missing the required parameter 'memberId' when calling getMemberUsers");
     }
     
+
     // create path and map variables
-    String localVarPath = "/members/user/get/{member_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "member_id" + "\\}", apiClient.escapeString(memberId.toString()));
+    String localVarPath = "/members/user/get/{member_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "member_id" + "\\}", apiInvoker.escapeString(memberId.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    // header params
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    // form params
+    Map<String, String> localVarFormParams = new HashMap<String, String>();
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "user_id", userId));
+    localVarQueryParams.addAll(ApiInvoker.parameterToPairs("", "user_id", userId));
     
 
     
 
-    
-
-    final String[] localVarAccepts = {
+    String[] localVarContentTypes = {
       "application/json"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    String localVarContentType = localVarContentTypes.length > 0 ? localVarContentTypes[0] : "application/json";
 
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    if (localVarContentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
 
-    String[] localVarAuthNames = new String[] { "X-Boomtown-Date", "X-Boomtown-Signature", "X-Boomtown-Token" };
+      localVarPostBody = localVarBuilder.build();
+    } else {
+      // normal form params
+      
+    }
 
-    
-    GenericType<MemberUserResponse> localVarReturnType = new GenericType<MemberUserResponse>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
+    try {
+      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      if(localVarResponse != null){
+        return (MemberUserResponse) ApiInvoker.deserialize(localVarResponse, "", MemberUserResponse.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
   }
   
 }

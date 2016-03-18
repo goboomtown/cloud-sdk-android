@@ -1,35 +1,28 @@
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 
 
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-17T14:09:14.476-06:00")
-public class Error   {
+@ApiModel(description = "")
+public class Error  {
   
+  @SerializedName("success")
   private Boolean success = null;
+  @SerializedName("current_server_time")
   private Date currentServerTime = null;
+  @SerializedName("message")
   private String message = null;
 
   
   /**
    * Indicates whether the request was or was not successful
    **/
-  public Error success(Boolean success) {
-    this.success = success;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Indicates whether the request was or was not successful")
-  @JsonProperty("success")
+  @ApiModelProperty(value = "Indicates whether the request was or was not successful")
   public Boolean getSuccess() {
     return success;
   }
@@ -40,13 +33,7 @@ public class Error   {
   
   /**
    **/
-  public Error currentServerTime(Date currentServerTime) {
-    this.currentServerTime = currentServerTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("current_server_time")
+  @ApiModelProperty(value = "")
   public Date getCurrentServerTime() {
     return currentServerTime;
   }
@@ -57,13 +44,7 @@ public class Error   {
   
   /**
    **/
-  public Error message(String message) {
-    this.message = message;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("message")
+  @ApiModelProperty(value = "")
   public String getMessage() {
     return message;
   }
@@ -74,47 +55,16 @@ public class Error   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Error error = (Error) o;
-    return Objects.equals(this.success, error.success) &&
-        Objects.equals(this.currentServerTime, error.currentServerTime) &&
-        Objects.equals(this.message, error.message);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(success, currentServerTime, message);
-  }
-
-  @Override
-  public String toString() {
+  public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Error {\n");
     
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    currentServerTime: ").append(toIndentedString(currentServerTime)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("}");
+    sb.append("  success: ").append(success).append("\n");
+    sb.append("  currentServerTime: ").append(currentServerTime).append("\n");
+    sb.append("  message: ").append(message).append("\n");
+    sb.append("}\n");
     return sb.toString();
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 }
-
 
 
