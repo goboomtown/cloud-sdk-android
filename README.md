@@ -1,5 +1,5 @@
-# cloud-sdk-java: Boomtown Provider API (Java)
-Java SDK for the Boomtown Cloud API.
+# cloud-sdk-android: Boomtown Provider API (Android)
+Example Usage SDK for the Boomtown Cloud API.
 
 ## Overview
 Boomtown provides a Cloud API SDK to support providers needing code access to our data layer.
@@ -9,9 +9,9 @@ Authentication is used using a pre-shared key and secret, which is generated in 
 ## Getting Started
 To get started:
  - Clone this repository
- - Import as a Gradle project to your IDE
+ - Follow the *Example Usage* section to import the module into your existing Android project
  - Generate API keys from the Boomtown Admin Portal
- - Configure the API keys in `Constants`
+ - Configure the API keys in `ApiExample`
  - Review examples in `ApiExample`
 
 ## API Key Generation
@@ -25,17 +25,67 @@ To generate an API access token and private-key:
  - Click Re-Generate
  - Copy the access token and private-key, as provided in the pop-up dialog
 
-## Java SDK Configuration
+## Android SDK Configuration
 Prior to using the API, you must configure the Java sources with the generated access token and private-key:
- - Follow the *Getting Started* section, for importing the project into your IDE
- - Set `Constants.TOKEN` equal to the access token generated in the Admin Portal.
- - Set `Constants.KEY` equal to the private-key generated in the Admin Portal.
+ - Follow the *Example Usage* section, for importing the project into your existing Android project
+ - Set `ApiExample.TOKEN` equal to the access token generated in the Admin Portal.
+ - Set `ApiExample.KEY` equal to the private-key generated in the Admin Portal.
+
+## Example Usage
+To quickly get started using the Boomtown Cloud SDK:
+ - Clone the source into your existing Gradle project's root directory
+ - Include the module in the root project's `settings.gradle`:
+
+
+    include ':boomtown-api_v2-swagger-android'
+ - Include the module in each module's `build.gradle` `dependencies` block:
+
+
+    dependencies {
+        compile project(':boomtown-api_v2-swagger-android')
+    }
+
+
+Example `ApiExample` usage during a Button on-click event:
+
+    public void onClickStart(View v) {
+        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    ApiExample api = new ApiExample(new ApiExample.TextWriter() {
+                        @Override
+                        public void println(final String line) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    textView.append(line + "\n");
+                                }
+                            });
+                        }
+                    });
+                    api.exampleGetProvider();
+
+                    //api.exampleGetIssues();
+
+                    //api.exampleAddIssueNotes();
+                    //api.exampleResolveIssue();
+
+                    //api.exampleCreateMerchant();
+                } catch (Exception e) {
+                    Log.e(TAG, e.getClass().getSimpleName() + ": " + e.getMessage());
+                }
+                return null;
+            }
+        };
+
+        task.execute((Void[])null);
+    }
 
 ## Examples
-See `ApiExample` for examples interfacing with the API.
+You must implementation your own usage of ApiExample, as describe in the *Example Usage* section.
 
-### ApiExample.main(String[])
-By default, running `ApiExample.main(String[])` will dump/output the provider's information, including it's associated merchants.
+See `ApiExample` for examples interfacing with the API.
 
 ### api.exampleGetProvider()
 Dumps/outputs the provider's information, including it's associated merchants.
