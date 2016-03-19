@@ -1,0 +1,37 @@
+diff --git a/modules/swagger-codegen/src/main/resources/android/api.mustache b/modules/swagger-codegen/src/main/resources/android/api.mustache
+index f3d0f79..72a197a 100644
+--- a/modules/swagger-codegen/src/main/resources/android/api.mustache
++++ b/modules/swagger-codegen/src/main/resources/android/api.mustache
+@@ -38,6 +38,10 @@ public class {{classname}} {
+     return basePath;
+   }
+ 
++  public String invokeAPI(String host, String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, String> formParams, String contentType) throws ApiException {
++    return getInvoker().invokeAPI(host, path, method, queryParams, body, headerParams, formParams, contentType);
++  }
++
+   {{#operation}}
+   /**
+    * {{summary}}
+@@ -98,7 +102,7 @@ public class {{classname}} {
+     }
+ 
+     try {
+-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "{{httpMethod}}", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
++      String localVarResponse = invokeAPI(basePath, localVarPath, "{{httpMethod}}", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+       if(localVarResponse != null){
+         return {{#returnType}}({{{returnType}}}) ApiInvoker.deserialize(localVarResponse, "{{returnContainer}}", {{returnBaseType}}.class){{/returnType}};
+       }
+diff --git a/modules/swagger-codegen/src/main/resources/android/build.mustache b/modules/swagger-codegen/src/main/resources/android/build.mustache
+index dff1897..e36fa64 100644
+--- a/modules/swagger-codegen/src/main/resources/android/build.mustache
++++ b/modules/swagger-codegen/src/main/resources/android/build.mustache
+@@ -29,7 +29,7 @@ apply plugin: 'com.github.dcendents.android-maven'
+ 
+ android {
+     compileSdkVersion 22
+-    buildToolsVersion '22.0.0'
++    buildToolsVersion '22.0.1'
+     defaultConfig {
+         minSdkVersion 14
+         targetSdkVersion 22
