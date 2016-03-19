@@ -1,18 +1,16 @@
 package com.goboomtown.sdk.swagger.model;
 
-import com.goboomtown.sdk.swagger.model.BaseResponse;
-import com.goboomtown.sdk.swagger.model.ProviderTeam;
-import java.util.*;
-import java.util.Date;
-
-
-import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.util.Date;
+import java.util.List;
 
 
 
 @ApiModel(description = "")
-public class ProviderTeamResponse extends BaseResponse {
+public class ProviderTeamResponse {
   
   @SerializedName("pages")
   private Integer pages = null;

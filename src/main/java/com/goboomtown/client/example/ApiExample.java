@@ -1,5 +1,6 @@
 package com.goboomtown.client.example;
 
+import android.util.Log;
 import com.goboomtown.sdk.ApiUtil;
 import com.goboomtown.sdk.swagger.ApiException;
 import com.goboomtown.sdk.swagger.model.Member;
@@ -17,8 +18,14 @@ import java.util.List;
  * Example Boomtown Provider API client.
  */
 public class ApiExample {
+    public interface TextWriter {
+        void println(String line);
+    }
+
     private static final String TOKEN = "__API_TOKEN__";
     private static final String KEY = "__API_SECRET_KEY__";
+
+    private static final String TAG = ApiExample.class.getSimpleName();
 
     public static final DateFormat DATE_FORMAT_DISPLAY = new SimpleDateFormat("M/d/yyyy h:mm:ss a");
 
@@ -33,6 +40,15 @@ public class ApiExample {
         } catch (InvalidKeyException e) {
             throw new ExceptionInInitializerError(e);
         }
+    }
+
+    private final TextWriter writer;
+
+    /**
+     * @param writer The TextView for printing example text
+     */
+    public ApiExample(TextWriter writer) {
+        this.writer = writer;
     }
 
     /**
@@ -50,7 +66,7 @@ public class ApiExample {
      *
      * @throws ApiException On API call failure
      */
-    private void exampleGetProvider() throws ApiException {
+    public void exampleGetProvider() throws ApiException {
         Provider provider = Provider.getInstance();
 
         println(String.format("Provider: %s (%s):", provider.getName(), provider.getId()));
@@ -104,7 +120,7 @@ public class ApiExample {
      *
      * @throws ApiException On API call failure
      */
-    private void exampleGetIssues() throws ApiException {
+    public void exampleGetIssues() throws ApiException {
         println("Issues:");
         List<Issue> issues = Provider.getInstance().getIssues(5, 0);
         for (Issue issue : issues) {
@@ -120,7 +136,7 @@ public class ApiExample {
      *
      * @throws ApiException On API call failure
      */
-    private void exampleAddIssueNotes() throws ApiException {
+    public void exampleAddIssueNotes() throws ApiException {
         Provider provider = getProvider();
         List<Issue> issues = provider.getIssues(1, 0);
         if (issues.size() != 1) {
@@ -145,7 +161,7 @@ public class ApiExample {
      *
      * @throws ApiException On API call failure
      */
-    private void exampleResolveIssue() throws ApiException {
+    public void exampleResolveIssue() throws ApiException {
         Provider provider = getProvider();
         List<Issue> issues = provider.getIssues(1, 0);
         if (issues.size() != 1) {
@@ -170,7 +186,7 @@ public class ApiExample {
      *
      * @throws ApiException On API call failure
      */
-    private void exampleCreateMerchant() throws ApiException {
+    public void exampleCreateMerchant() throws ApiException {
         Provider provider = Provider.getInstance();
 
         println("Create member:");
@@ -217,18 +233,18 @@ public class ApiExample {
         println("");
     }
 
-
     /**
-     * System.out.println wrapper.
+     * textView.append() wrapper.
      */
-    private static void println(String format) {
-        System.out.println(format);
+    private void println(String format) {
+        writer.println(format);
+        Log.d(TAG, format + "\n");
     }
 
     /**
      * Issue debug printer
      */
-    private static void printIssue(Issue issue, String indent, boolean withDetail) throws ApiException {
+    private void printIssue(Issue issue, String indent, boolean withDetail) throws ApiException {
         println(String.format("%s%s (%s)", indent, issue.getId(), issue.getReferenceNum()));
         println(String.format("%s\tcreated: %s", indent, DATE_FORMAT_DISPLAY.format(issue.getCreated())));
         println(String.format("%s\tcategory: %s", indent, issue.getCategory()));
@@ -257,24 +273,5 @@ public class ApiExample {
                 println(String.format("%s\t\t\tsummaryText: %s", indent, statusHistory.getTicketSummaryText()));
             }
         }
-    }
-
-    /**
-     * Example main/application/usage.
-     *
-     * @param args Input arguments
-     * @throws ApiException
-     */
-    public static void main(String[] args) throws ApiException {
-        ApiExample api = new ApiExample();
-
-        api.exampleGetProvider();
-
-        //api.exampleGetIssues();
-
-        //api.exampleAddIssueNotes();
-        //api.exampleResolveIssue();
-
-        //api.exampleCreateMerchant();
     }
 }

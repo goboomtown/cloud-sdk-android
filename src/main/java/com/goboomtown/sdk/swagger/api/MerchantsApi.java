@@ -3,25 +3,13 @@ package com.goboomtown.sdk.swagger.api;
 import com.goboomtown.sdk.swagger.ApiException;
 import com.goboomtown.sdk.swagger.ApiInvoker;
 import com.goboomtown.sdk.swagger.Pair;
-
 import com.goboomtown.sdk.swagger.model.*;
-
-import java.util.*;
-
-import com.goboomtown.sdk.swagger.model.MemberCreateResponse;
-import com.goboomtown.sdk.swagger.model.Error;
-import com.goboomtown.sdk.swagger.model.MemberCreateRequest;
-import com.goboomtown.sdk.swagger.model.MemberResponse;
-import com.goboomtown.sdk.swagger.model.MemberUserResponse;
-import com.goboomtown.sdk.swagger.model.MemberLocationResponse;
-import com.goboomtown.sdk.swagger.model.EnumerationItemResponse;
-
-
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 
 public class MerchantsApi {
@@ -42,6 +30,10 @@ public class MerchantsApi {
 
   public String getBasePath() {
     return basePath;
+  }
+
+  public String invokeAPI(String host, String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, String> formParams, String contentType) throws ApiException {
+    return getInvoker().invokeAPI(host, path, method, queryParams, body, headerParams, formParams, contentType);
   }
 
   
@@ -91,7 +83,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (MemberCreateResponse) ApiInvoker.deserialize(localVarResponse, "", MemberCreateResponse.class);
       }
@@ -149,7 +141,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (MemberResponse) ApiInvoker.deserialize(localVarResponse, "", MemberResponse.class);
       }
@@ -207,7 +199,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (MemberUserResponse) ApiInvoker.deserialize(localVarResponse, "", MemberUserResponse.class);
       }
@@ -268,7 +260,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (MemberLocationResponse) ApiInvoker.deserialize(localVarResponse, "", MemberLocationResponse.class);
       }
@@ -320,7 +312,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (EnumerationItemResponse) ApiInvoker.deserialize(localVarResponse, "", EnumerationItemResponse.class);
       }
@@ -372,7 +364,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (EnumerationItemResponse) ApiInvoker.deserialize(localVarResponse, "", EnumerationItemResponse.class);
       }
@@ -433,7 +425,7 @@ public class MerchantsApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (MemberUserResponse) ApiInvoker.deserialize(localVarResponse, "", MemberUserResponse.class);
       }

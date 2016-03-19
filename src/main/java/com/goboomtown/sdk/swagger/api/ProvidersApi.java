@@ -3,22 +3,15 @@ package com.goboomtown.sdk.swagger.api;
 import com.goboomtown.sdk.swagger.ApiException;
 import com.goboomtown.sdk.swagger.ApiInvoker;
 import com.goboomtown.sdk.swagger.Pair;
-
-import com.goboomtown.sdk.swagger.model.*;
-
-import java.util.*;
-
-import com.goboomtown.sdk.swagger.model.ProviderResponse;
-import com.goboomtown.sdk.swagger.model.Error;
 import com.goboomtown.sdk.swagger.model.MemberResponse;
+import com.goboomtown.sdk.swagger.model.ProviderResponse;
 import com.goboomtown.sdk.swagger.model.ProviderTeamResponse;
-
-
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 
 public class ProvidersApi {
@@ -39,6 +32,10 @@ public class ProvidersApi {
 
   public String getBasePath() {
     return basePath;
+  }
+
+  public String invokeAPI(String host, String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, String> formParams, String contentType) throws ApiException {
+    return getInvoker().invokeAPI(host, path, method, queryParams, body, headerParams, formParams, contentType);
   }
 
   
@@ -82,7 +79,7 @@ public class ProvidersApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (ProviderResponse) ApiInvoker.deserialize(localVarResponse, "", ProviderResponse.class);
       }
@@ -134,7 +131,7 @@ public class ProvidersApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (MemberResponse) ApiInvoker.deserialize(localVarResponse, "", MemberResponse.class);
       }
@@ -192,7 +189,7 @@ public class ProvidersApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (ProviderTeamResponse) ApiInvoker.deserialize(localVarResponse, "", ProviderTeamResponse.class);
       }
@@ -244,7 +241,7 @@ public class ProvidersApi {
     }
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
+      String localVarResponse = invokeAPI(basePath, localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarContentType);
       if(localVarResponse != null){
         return (ProviderTeamResponse) ApiInvoker.deserialize(localVarResponse, "", ProviderTeamResponse.class);
       }

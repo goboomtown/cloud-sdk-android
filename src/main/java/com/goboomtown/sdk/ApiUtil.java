@@ -1,6 +1,7 @@
 package com.goboomtown.sdk;
 
 import android.util.Base64;
+import android.util.Log;
 import com.goboomtown.sdk.swagger.ApiException;
 import com.goboomtown.sdk.swagger.ApiInvoker;
 import com.goboomtown.sdk.swagger.Pair;
@@ -30,6 +31,8 @@ public class ApiUtil {
         DATE_FORMAT_API.setTimeZone(TimeZone.getDefault());
     }
 
+    private static final String TAG = ApiUtil.class.getSimpleName();
+
     private static final String BASE_PATH = "/api/v2";
 
     private static Mac sha256_HMAC = null;
@@ -54,7 +57,7 @@ public class ApiUtil {
         }
 
         Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
-        sha256_HMAC.init(new javax.crypto.spec.SecretKeySpec(privateKey.getBytes("UTF-8"), "HmacSHA256"));
+        sha256_HMAC.init(new javax.crypto.spec.SecretKeySpec(privateKey.getBytes(), "HmacSHA256"));
 
         ApiUtil.token = token;
         ApiUtil.sha256_HMAC = sha256_HMAC;
@@ -112,7 +115,8 @@ public class ApiUtil {
      * Returns an encoded X-Boomtown-Signature.
      */
     private static String encode(String data) throws Exception {
-        return Base64.encodeToString(sha256_HMAC.doFinal(data.getBytes("UTF-8")), Base64.DEFAULT);
+        Log.d(TAG, "encode(" + data + ")");
+        return new String(Base64.encode(sha256_HMAC.doFinal(data.getBytes()), Base64.DEFAULT)).trim();
     }
 
     /**
@@ -126,7 +130,7 @@ public class ApiUtil {
         return new ApiInvoker() {
             @Override
             public String invokeAPI(String host, String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, String> formParams, String contentType) throws ApiException {
-                String dt = DATE_FORMAT.format(new Date());
+                String dt = ApiUtil.DATE_FORMAT.format(new Date());
 
                 headerParams.put("X-Boomtown-Date", dt);
                 headerParams.put("X-Boomtown-Token", token);
