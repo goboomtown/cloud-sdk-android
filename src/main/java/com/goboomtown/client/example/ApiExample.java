@@ -234,6 +234,20 @@ public class ApiExample {
     }
 
     /**
+     * Example of creating a new issue, user, and/or location, which is associated to this provider.
+     *
+     * @throws ApiException On API call failure
+     */
+    public void exampleCreateIssue() throws ApiException {
+        Provider provider = Provider.getInstance();
+
+        println("Create issue:");
+        Issue issue = provider.createIssue("XYZ123", "XYZ123-9ZE", "XYZ123-T7N", null);
+        printIssue(issue, "\t", false);
+        println("");
+    }
+
+    /**
      * textView.append() wrapper.
      */
     private void println(String format) {

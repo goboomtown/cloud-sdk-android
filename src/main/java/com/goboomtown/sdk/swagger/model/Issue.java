@@ -47,10 +47,10 @@ public class Issue  {
   private Date created = null;
   @SerializedName("updated")
   private Date updated = null;
-  @SerializedName("enroute_time")
-  private Date enrouteTime = null;
   @SerializedName("scheduled_time")
   private Date scheduledTime = null;
+  @SerializedName("enroute_time")
+  private Date enrouteTime = null;
   @SerializedName("arrival_time")
   private Date arrivalTime = null;
   @SerializedName("departure_time")
@@ -58,9 +58,9 @@ public class Issue  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -70,9 +70,9 @@ public class Issue  {
 
   
   /**
-   * Reference number.
+   * Reference number
    **/
-  @ApiModelProperty(value = "Reference number.")
+  @ApiModelProperty(value = "Reference number")
   public String getReferenceNum() {
     return referenceNum;
   }
@@ -82,9 +82,9 @@ public class Issue  {
 
   
   /**
-   * The primary key of the related *Merchant*.
+   * Related *Merchant* primary key
    **/
-  @ApiModelProperty(required = true, value = "The primary key of the related *Merchant*.")
+  @ApiModelProperty(required = true, value = "Related *Merchant* primary key")
   public String getMembersId() {
     return membersId;
   }
@@ -94,8 +94,9 @@ public class Issue  {
 
   
   /**
+   * Related *Merchant* name
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Related *Merchant* name")
   public String getMembersName() {
     return membersName;
   }
@@ -105,8 +106,9 @@ public class Issue  {
 
   
   /**
+   * Related *Merchant* email
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Related *Merchant* email")
   public String getMembersEmail() {
     return membersEmail;
   }
@@ -116,9 +118,9 @@ public class Issue  {
 
   
   /**
-   * The primary key of the related *MerchantLocation*.
+   * Related *MerchantLocation* primary key
    **/
-  @ApiModelProperty(required = true, value = "The primary key of the related *MerchantLocation*.")
+  @ApiModelProperty(required = true, value = "Related *MerchantLocation* primary key")
   public String getMembersLocationsId() {
     return membersLocationsId;
   }
@@ -128,8 +130,9 @@ public class Issue  {
 
   
   /**
+   * Related *MerchantLocation* name
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Related *MerchantLocation* name")
   public String getMembersLocationsName() {
     return membersLocationsName;
   }
@@ -139,9 +142,9 @@ public class Issue  {
 
   
   /**
-   * The primary key of the related *MerchantUser*.
+   * Related *MerchantUser* primary key
    **/
-  @ApiModelProperty(required = true, value = "The primary key of the related *MerchantUser*.")
+  @ApiModelProperty(required = true, value = "Related *MerchantUser* primary key")
   public String getMembersUsersId() {
     return membersUsersId;
   }
@@ -151,8 +154,9 @@ public class Issue  {
 
   
   /**
+   * Related *MerchantUser* name
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Related *MerchantUser* name")
   public String getMembersUsersName() {
     return membersUsersName;
   }
@@ -162,8 +166,9 @@ public class Issue  {
 
   
   /**
+   * Related *MerchantUser* email
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Related *MerchantUser* email")
   public String getMembersUsersEmail() {
     return membersUsersEmail;
   }
@@ -173,9 +178,9 @@ public class Issue  {
 
   
   /**
-   * Type.
+   * Type
    **/
-  @ApiModelProperty(value = "Type.")
+  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -185,9 +190,9 @@ public class Issue  {
 
   
   /**
-   * Category.
+   * Category
    **/
-  @ApiModelProperty(value = "Category.")
+  @ApiModelProperty(value = "Category")
   public String getCategory() {
     return category;
   }
@@ -197,9 +202,9 @@ public class Issue  {
 
   
   /**
-   * Details.
+   * Details
    **/
-  @ApiModelProperty(value = "Details.")
+  @ApiModelProperty(value = "Details")
   public String getDetails() {
     return details;
   }
@@ -209,9 +214,9 @@ public class Issue  {
 
   
   /**
-   * Status.
+   * Status
    **/
-  @ApiModelProperty(value = "Status.")
+  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -221,9 +226,9 @@ public class Issue  {
 
   
   /**
-   * Job type.
+   * Job type
    **/
-  @ApiModelProperty(value = "Job type.")
+  @ApiModelProperty(value = "Job type")
   public String getJob() {
     return job;
   }
@@ -233,9 +238,9 @@ public class Issue  {
 
   
   /**
-   * Resolution type.
+   * Resolution
    **/
-  @ApiModelProperty(value = "Resolution type.")
+  @ApiModelProperty(value = "Resolution")
   public String getResolution() {
     return resolution;
   }
@@ -245,9 +250,9 @@ public class Issue  {
 
   
   /**
-   * Date created.
+   * Created
    **/
-  @ApiModelProperty(value = "Date created.")
+  @ApiModelProperty(value = "Created")
   public Date getCreated() {
     return created;
   }
@@ -257,9 +262,9 @@ public class Issue  {
 
   
   /**
-   * Date last updated.
+   * Updated
    **/
-  @ApiModelProperty(value = "Date last updated.")
+  @ApiModelProperty(value = "Updated")
   public Date getUpdated() {
     return updated;
   }
@@ -269,21 +274,9 @@ public class Issue  {
 
   
   /**
-   * Actual technician travel time.
+   * Technician job scheduled
    **/
-  @ApiModelProperty(value = "Actual technician travel time.")
-  public Date getEnrouteTime() {
-    return enrouteTime;
-  }
-  public void setEnrouteTime(Date enrouteTime) {
-    this.enrouteTime = enrouteTime;
-  }
-
-  
-  /**
-   * Date/time scheduled.
-   **/
-  @ApiModelProperty(value = "Date/time scheduled.")
+  @ApiModelProperty(value = "Technician job scheduled")
   public Date getScheduledTime() {
     return scheduledTime;
   }
@@ -293,9 +286,21 @@ public class Issue  {
 
   
   /**
-   * Technician arrival time.
+   * Technician en-route for job
    **/
-  @ApiModelProperty(value = "Technician arrival time.")
+  @ApiModelProperty(value = "Technician en-route for job")
+  public Date getEnrouteTime() {
+    return enrouteTime;
+  }
+  public void setEnrouteTime(Date enrouteTime) {
+    this.enrouteTime = enrouteTime;
+  }
+
+  
+  /**
+   * Technician arrived at job
+   **/
+  @ApiModelProperty(value = "Technician arrived at job")
   public Date getArrivalTime() {
     return arrivalTime;
   }
@@ -305,9 +310,9 @@ public class Issue  {
 
   
   /**
-   * Technician departure time.
+   * Technician departed job
    **/
-  @ApiModelProperty(value = "Technician departure time.")
+  @ApiModelProperty(value = "Technician departed job")
   public Date getDepartureTime() {
     return departureTime;
   }
@@ -340,8 +345,8 @@ public class Issue  {
     sb.append("  resolution: ").append(resolution).append("\n");
     sb.append("  created: ").append(created).append("\n");
     sb.append("  updated: ").append(updated).append("\n");
-    sb.append("  enrouteTime: ").append(enrouteTime).append("\n");
     sb.append("  scheduledTime: ").append(scheduledTime).append("\n");
+    sb.append("  enrouteTime: ").append(enrouteTime).append("\n");
     sb.append("  arrivalTime: ").append(arrivalTime).append("\n");
     sb.append("  departureTime: ").append(departureTime).append("\n");
     sb.append("}\n");

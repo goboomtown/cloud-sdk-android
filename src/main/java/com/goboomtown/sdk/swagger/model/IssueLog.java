@@ -24,9 +24,9 @@ public class IssueLog  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -36,9 +36,9 @@ public class IssueLog  {
 
   
   /**
-   * The primary key of the related *Issue*.
+   * Related *Issue* primary key
    **/
-  @ApiModelProperty(required = true, value = "The primary key of the related *Issue*.")
+  @ApiModelProperty(required = true, value = "Related *Issue* primary key")
   public String getIssuesId() {
     return issuesId;
   }
@@ -48,9 +48,9 @@ public class IssueLog  {
 
   
   /**
-   * Differences.
+   * Differences
    **/
-  @ApiModelProperty(value = "Differences.")
+  @ApiModelProperty(value = "Differences")
   public String getDiffLog() {
     return diffLog;
   }
@@ -60,9 +60,9 @@ public class IssueLog  {
 
   
   /**
-   * Notes.
+   * Notes
    **/
-  @ApiModelProperty(value = "Notes.")
+  @ApiModelProperty(value = "Notes")
   public String getNotes() {
     return notes;
   }
@@ -72,9 +72,9 @@ public class IssueLog  {
 
   
   /**
-   * Date created.
+   * Created
    **/
-  @ApiModelProperty(value = "Date created.")
+  @ApiModelProperty(value = "Created")
   public Date getCreated() {
     return created;
   }

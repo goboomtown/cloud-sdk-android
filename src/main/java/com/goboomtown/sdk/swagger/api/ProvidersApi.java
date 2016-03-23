@@ -3,15 +3,22 @@ package com.goboomtown.sdk.swagger.api;
 import com.goboomtown.sdk.swagger.ApiException;
 import com.goboomtown.sdk.swagger.ApiInvoker;
 import com.goboomtown.sdk.swagger.Pair;
-import com.goboomtown.sdk.swagger.model.MemberResponse;
+
+import com.goboomtown.sdk.swagger.model.*;
+
+import java.util.*;
+
 import com.goboomtown.sdk.swagger.model.ProviderResponse;
+import com.goboomtown.sdk.swagger.model.Error;
+import com.goboomtown.sdk.swagger.model.MemberResponse;
 import com.goboomtown.sdk.swagger.model.ProviderTeamResponse;
+
+
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
+import java.io.File;
 
 
 public class ProvidersApi {
@@ -40,8 +47,8 @@ public class ProvidersApi {
 
   
   /**
-   * Returns your Provider
-   * Returns your *Provider* record
+   * Get your Provider
+   * Returns a *Provider* object.
    * @return ProviderResponse
    */
   public ProviderResponse  getProvider () throws ApiException {
@@ -92,8 +99,8 @@ public class ProvidersApi {
   }
   
   /**
-   * Returns Merchants
-   * Returns collection of related *Merchant* records
+   * Get a collection of Merchants for your Provider
+   * Returns a paginated collection of *Merchant* objects related to your *Provider* object.
    * @return MemberResponse
    */
   public MemberResponse  getProviderMembers () throws ApiException {
@@ -144,8 +151,8 @@ public class ProvidersApi {
   }
   
   /**
-   * Returns a ProviderTeam
-   * Returns a *ProviderTeam* record
+   * Get a Provider Team
+   * Returns a *Provider Team* object.
    * @param providerTeamId The primary key of the ProviderTeam
    * @return ProviderTeamResponse
    */
@@ -202,8 +209,8 @@ public class ProvidersApi {
   }
   
   /**
-   * Returns your ProviderTeams
-   * Returns a collection of *ProviderTeam* records
+   * Get a collection of Teams for your Provider
+   * Returns a paginated collection of *Provider Team* objects related to your *Provider* object.
    * @return ProviderTeamResponse
    */
   public ProviderTeamResponse  getProviderTeams () throws ApiException {

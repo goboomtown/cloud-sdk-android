@@ -28,9 +28,9 @@ public class IssueStatus  {
 
   
   /**
-   * Date created.
+   * Created
    **/
-  @ApiModelProperty(value = "Date created.")
+  @ApiModelProperty(value = "Created")
   public Date getCreated() {
     return created;
   }
@@ -40,9 +40,9 @@ public class IssueStatus  {
 
   
   /**
-   * The type of Issue this log is associated to.
+   * Type
    **/
-  @ApiModelProperty(value = "The type of Issue this log is associated to.")
+  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -52,9 +52,9 @@ public class IssueStatus  {
 
   
   /**
-   * The status of the issue.
+   * Status
    **/
-  @ApiModelProperty(value = "The status of the issue.")
+  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -64,9 +64,9 @@ public class IssueStatus  {
 
   
   /**
-   * Resolution type.
+   * Resolution
    **/
-  @ApiModelProperty(value = "Resolution type.")
+  @ApiModelProperty(value = "Resolution")
   public String getResolution() {
     return resolution;
   }
@@ -76,9 +76,9 @@ public class IssueStatus  {
 
   
   /**
-   * Scheduled date/time.
+   * Technician job scheduled
    **/
-  @ApiModelProperty(value = "Scheduled date/time.")
+  @ApiModelProperty(value = "Technician job scheduled")
   public Date getScheduledTime() {
     return scheduledTime;
   }
@@ -88,9 +88,9 @@ public class IssueStatus  {
 
   
   /**
-   * Text describing the issue status/log event.
+   * State description
    **/
-  @ApiModelProperty(value = "Text describing the issue status/log event.")
+  @ApiModelProperty(value = "State description")
   public String getTicketSummaryText() {
     return ticketSummaryText;
   }
@@ -100,9 +100,9 @@ public class IssueStatus  {
 
   
   /**
-   * Text describing the issue status/log event.
+   * Event/trigger description
    **/
-  @ApiModelProperty(value = "Text describing the issue status/log event.")
+  @ApiModelProperty(value = "Event/trigger description")
   public String getHistorySummaryText() {
     return historySummaryText;
   }

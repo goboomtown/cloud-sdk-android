@@ -1,16 +1,18 @@
 package com.goboomtown.sdk.swagger.model;
 
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
+import com.goboomtown.sdk.swagger.model.BaseResponse;
+import com.goboomtown.sdk.swagger.model.MemberTuple;
 import java.util.Date;
+
+
+import io.swagger.annotations.*;
+import com.google.gson.annotations.SerializedName;
 
 
 
 @ApiModel(description = "")
-public class MemberCreateResponse {
-
+public class MemberCreateResponse extends BaseResponse {
+  
   @SerializedName("pages")
   private Integer pages = null;
   @SerializedName("success")
@@ -28,9 +30,9 @@ public class MemberCreateResponse {
 
   
   /**
-   * Total pages available.
+   * Total pages available
    **/
-  @ApiModelProperty(value = "Total pages available.")
+  @ApiModelProperty(value = "Total pages available")
   public Integer getPages() {
     return pages;
   }
@@ -40,9 +42,9 @@ public class MemberCreateResponse {
 
   
   /**
-   * Indicates success of the operation.
+   * Indicates success of the operation
    **/
-  @ApiModelProperty(value = "Indicates success of the operation.")
+  @ApiModelProperty(value = "Indicates success of the operation")
   public Boolean getSuccess() {
     return success;
   }
@@ -63,9 +65,9 @@ public class MemberCreateResponse {
 
   
   /**
-   * Total records available.
+   * Total objects available
    **/
-  @ApiModelProperty(value = "Total records available.")
+  @ApiModelProperty(value = "Total objects available")
   public Integer getTotalCount() {
     return totalCount;
   }
@@ -75,9 +77,9 @@ public class MemberCreateResponse {
 
   
   /**
-   * Total records retrieved.
+   * Total objects retrieved
    **/
-  @ApiModelProperty(value = "Total records retrieved.")
+  @ApiModelProperty(value = "Total objects retrieved")
   public Integer getReturned() {
     return returned;
   }

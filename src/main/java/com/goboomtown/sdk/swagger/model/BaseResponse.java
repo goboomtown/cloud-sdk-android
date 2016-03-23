@@ -26,9 +26,9 @@ public class BaseResponse  {
 
   
   /**
-   * Indicates success of the operation.
+   * Indicates success of the operation
    **/
-  @ApiModelProperty(value = "Indicates success of the operation.")
+  @ApiModelProperty(value = "Indicates success of the operation")
   public Boolean getSuccess() {
     return success;
   }
@@ -49,9 +49,9 @@ public class BaseResponse  {
 
   
   /**
-   * Total records available.
+   * Total objects available
    **/
-  @ApiModelProperty(value = "Total records available.")
+  @ApiModelProperty(value = "Total objects available")
   public Integer getTotalCount() {
     return totalCount;
   }
@@ -61,9 +61,9 @@ public class BaseResponse  {
 
   
   /**
-   * Total records retrieved.
+   * Total objects retrieved
    **/
-  @ApiModelProperty(value = "Total records retrieved.")
+  @ApiModelProperty(value = "Total objects retrieved")
   public Integer getReturned() {
     return returned;
   }
@@ -73,9 +73,9 @@ public class BaseResponse  {
 
   
   /**
-   * Total pages available.
+   * Total pages available
    **/
-  @ApiModelProperty(value = "Total pages available.")
+  @ApiModelProperty(value = "Total pages available")
   public Integer getPages() {
     return pages;
   }

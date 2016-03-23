@@ -33,9 +33,9 @@ public class MemberUser  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -45,9 +45,9 @@ public class MemberUser  {
 
   
   /**
-   * The primary key of the related *Merchant*.
+   * Related *Merchant* primary key
    **/
-  @ApiModelProperty(value = "The primary key of the related *Merchant*.")
+  @ApiModelProperty(value = "Related *Merchant* primary key")
   public String getMembersId() {
     return membersId;
   }
@@ -57,9 +57,9 @@ public class MemberUser  {
 
   
   /**
-   * The primary key of the related *MerchantLocation*.
+   * Related *MerchantLocation* primary key
    **/
-  @ApiModelProperty(value = "The primary key of the related *MerchantLocation*.")
+  @ApiModelProperty(value = "Related *MerchantLocation* primary key")
   public String getMembersLocationsId() {
     return membersLocationsId;
   }
@@ -69,9 +69,9 @@ public class MemberUser  {
 
   
   /**
-   * First name.
+   * First name
    **/
-  @ApiModelProperty(required = true, value = "First name.")
+  @ApiModelProperty(required = true, value = "First name")
   public String getFirstName() {
     return firstName;
   }
@@ -81,9 +81,9 @@ public class MemberUser  {
 
   
   /**
-   * Last name.
+   * Last name
    **/
-  @ApiModelProperty(required = true, value = "Last name.")
+  @ApiModelProperty(required = true, value = "Last name")
   public String getLastName() {
     return lastName;
   }
@@ -93,9 +93,9 @@ public class MemberUser  {
 
   
   /**
-   * Concatenation of first and last name.
+   * Full name
    **/
-  @ApiModelProperty(value = "Concatenation of first and last name.")
+  @ApiModelProperty(value = "Full name")
   public String getFullName() {
     return fullName;
   }
@@ -105,9 +105,9 @@ public class MemberUser  {
 
   
   /**
-   * Email address.
+   * Email
    **/
-  @ApiModelProperty(required = true, value = "Email address.")
+  @ApiModelProperty(required = true, value = "Email")
   public String getEmail() {
     return email;
   }
@@ -117,9 +117,9 @@ public class MemberUser  {
 
   
   /**
-   * SMS capable phone number.
+   * Mobile/SMS phone
    **/
-  @ApiModelProperty(value = "SMS capable phone number.")
+  @ApiModelProperty(value = "Mobile/SMS phone")
   public String getSmsNumber() {
     return smsNumber;
   }
@@ -129,9 +129,9 @@ public class MemberUser  {
 
   
   /**
-   * Language.
+   * Language (ISO-2)
    **/
-  @ApiModelProperty(value = "Language.")
+  @ApiModelProperty(value = "Language (ISO-2)")
   public String getLang() {
     return lang;
   }
@@ -141,9 +141,9 @@ public class MemberUser  {
 
   
   /**
-   * Status.
+   * Status
    **/
-  @ApiModelProperty(value = "Status.")
+  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }

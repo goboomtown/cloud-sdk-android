@@ -35,9 +35,9 @@ public class MemberLocation  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -47,9 +47,9 @@ public class MemberLocation  {
 
   
   /**
-   * The primary key of the related *Merchant*.
+   * The primary key of the related *Merchant*
    **/
-  @ApiModelProperty(value = "The primary key of the related *Merchant*.")
+  @ApiModelProperty(value = "The primary key of the related *Merchant*")
   public String getMembersId() {
     return membersId;
   }
@@ -59,9 +59,9 @@ public class MemberLocation  {
 
   
   /**
-   * Street address.
+   * Address 1
    **/
-  @ApiModelProperty(required = true, value = "Street address.")
+  @ApiModelProperty(required = true, value = "Address 1")
   public String getStreet1() {
     return street1;
   }
@@ -71,9 +71,9 @@ public class MemberLocation  {
 
   
   /**
-   * Street address continued.
+   * Address 2
    **/
-  @ApiModelProperty(value = "Street address continued.")
+  @ApiModelProperty(value = "Address 2")
   public String getStreet2() {
     return street2;
   }
@@ -83,9 +83,9 @@ public class MemberLocation  {
 
   
   /**
-   * City.
+   * City
    **/
-  @ApiModelProperty(required = true, value = "City.")
+  @ApiModelProperty(required = true, value = "City")
   public String getCity() {
     return city;
   }
@@ -95,9 +95,9 @@ public class MemberLocation  {
 
   
   /**
-   * State Identifier (2 char code).
+   * State/Province (2 char code)
    **/
-  @ApiModelProperty(required = true, value = "State Identifier (2 char code).")
+  @ApiModelProperty(required = true, value = "State/Province (2 char code)")
   public String getState() {
     return state;
   }
@@ -107,9 +107,9 @@ public class MemberLocation  {
 
   
   /**
-   * Postal Code.
+   * ZIP/Postal Code
    **/
-  @ApiModelProperty(required = true, value = "Postal Code.")
+  @ApiModelProperty(required = true, value = "ZIP/Postal Code")
   public String getZipcode() {
     return zipcode;
   }
@@ -119,9 +119,9 @@ public class MemberLocation  {
 
   
   /**
-   * Latitude.
+   * Latitude
    **/
-  @ApiModelProperty(value = "Latitude.")
+  @ApiModelProperty(value = "Latitude")
   public Double getLatitude() {
     return latitude;
   }
@@ -131,9 +131,9 @@ public class MemberLocation  {
 
   
   /**
-   * Longitude.
+   * Longitude
    **/
-  @ApiModelProperty(value = "Longitude.")
+  @ApiModelProperty(value = "Longitude")
   public Double getLongitude() {
     return longitude;
   }
@@ -143,9 +143,9 @@ public class MemberLocation  {
 
   
   /**
-   * Phone number.
+   * Phone
    **/
-  @ApiModelProperty(value = "Phone number.")
+  @ApiModelProperty(value = "Phone")
   public String getPhone() {
     return phone;
   }
@@ -155,9 +155,9 @@ public class MemberLocation  {
 
   
   /**
-   * Informal reference, an alias.
+   * Informal reference, an alias
    **/
-  @ApiModelProperty(value = "Informal reference, an alias.")
+  @ApiModelProperty(value = "Informal reference, an alias")
   public String getSiteName() {
     return siteName;
   }

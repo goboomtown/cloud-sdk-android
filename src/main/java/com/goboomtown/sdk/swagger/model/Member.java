@@ -40,9 +40,9 @@ public class Member  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -52,9 +52,9 @@ public class Member  {
 
   
   /**
-   * Business name.
+   * Business name
    **/
-  @ApiModelProperty(required = true, value = "Business name.")
+  @ApiModelProperty(required = true, value = "Business name")
   public String getName() {
     return name;
   }
@@ -64,9 +64,9 @@ public class Member  {
 
   
   /**
-   * Business legal name.
+   * Business legal name
    **/
-  @ApiModelProperty(value = "Business legal name.")
+  @ApiModelProperty(value = "Business legal name")
   public String getNameLegal() {
     return nameLegal;
   }
@@ -76,9 +76,9 @@ public class Member  {
 
   
   /**
-   * Street address.
+   * Address 1
    **/
-  @ApiModelProperty(value = "Street address.")
+  @ApiModelProperty(value = "Address 1")
   public String getStreet1() {
     return street1;
   }
@@ -88,9 +88,9 @@ public class Member  {
 
   
   /**
-   * Street address continued.
+   * Address 2
    **/
-  @ApiModelProperty(value = "Street address continued.")
+  @ApiModelProperty(value = "Address 2")
   public String getStreet2() {
     return street2;
   }
@@ -100,9 +100,9 @@ public class Member  {
 
   
   /**
-   * City.
+   * City
    **/
-  @ApiModelProperty(value = "City.")
+  @ApiModelProperty(value = "City")
   public String getCity() {
     return city;
   }
@@ -112,9 +112,9 @@ public class Member  {
 
   
   /**
-   * State Identifier (2 char code).
+   * State/Province (2 char code)
    **/
-  @ApiModelProperty(value = "State Identifier (2 char code).")
+  @ApiModelProperty(value = "State/Province (2 char code)")
   public String getState() {
     return state;
   }
@@ -124,9 +124,9 @@ public class Member  {
 
   
   /**
-   * Postal Code.
+   * ZIP/Postal Code
    **/
-  @ApiModelProperty(required = true, value = "Postal Code.")
+  @ApiModelProperty(required = true, value = "ZIP/Postal Code")
   public String getZipcode() {
     return zipcode;
   }
@@ -136,9 +136,9 @@ public class Member  {
 
   
   /**
-   * Email address.
+   * Email
    **/
-  @ApiModelProperty(required = true, value = "Email address.")
+  @ApiModelProperty(required = true, value = "Email")
   public String getEmail() {
     return email;
   }
@@ -148,9 +148,9 @@ public class Member  {
 
   
   /**
-   * Phone number.
+   * Phone
    **/
-  @ApiModelProperty(value = "Phone number.")
+  @ApiModelProperty(value = "Phone")
   public String getPhone() {
     return phone;
   }
@@ -160,9 +160,9 @@ public class Member  {
 
   
   /**
-   * Industry.
+   * Industry
    **/
-  @ApiModelProperty(value = "Industry.")
+  @ApiModelProperty(value = "Industry")
   public String getIndustry() {
     return industry;
   }
@@ -172,9 +172,9 @@ public class Member  {
 
   
   /**
-   * Status.
+   * Status
    **/
-  @ApiModelProperty(value = "Status.")
+  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -184,9 +184,9 @@ public class Member  {
 
   
   /**
-   * Date created.
+   * Created
    **/
-  @ApiModelProperty(value = "Date created.")
+  @ApiModelProperty(value = "Created")
   public Date getCreated() {
     return created;
   }

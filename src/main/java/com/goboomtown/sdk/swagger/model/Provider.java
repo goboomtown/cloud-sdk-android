@@ -54,9 +54,9 @@ public class Provider  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -66,9 +66,9 @@ public class Provider  {
 
   
   /**
-   * Business name.
+   * Business name
    **/
-  @ApiModelProperty(value = "Business name.")
+  @ApiModelProperty(value = "Business name")
   public String getName() {
     return name;
   }
@@ -78,9 +78,9 @@ public class Provider  {
 
   
   /**
-   * Business legal name.
+   * Business legal name
    **/
-  @ApiModelProperty(value = "Business legal name.")
+  @ApiModelProperty(value = "Business legal name")
   public String getNameLegal() {
     return nameLegal;
   }
@@ -90,9 +90,9 @@ public class Provider  {
 
   
   /**
-   * Hashtag nickname for group mentions in chat.
+   * Hashtag nickname for group mentions in chat
    **/
-  @ApiModelProperty(value = "Hashtag nickname for group mentions in chat.")
+  @ApiModelProperty(value = "Hashtag nickname for group mentions in chat")
   public String getNickname() {
     return nickname;
   }
@@ -102,9 +102,9 @@ public class Provider  {
 
   
   /**
-   * The communication channel id.
+   * The communication channel id
    **/
-  @ApiModelProperty(value = "The communication channel id.")
+  @ApiModelProperty(value = "The communication channel id")
   public String getCommId() {
     return commId;
   }
@@ -114,9 +114,9 @@ public class Provider  {
 
   
   /**
-   * Description.
+   * Description
    **/
-  @ApiModelProperty(value = "Description.")
+  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -126,9 +126,9 @@ public class Provider  {
 
   
   /**
-   * Street address.
+   * Address 1
    **/
-  @ApiModelProperty(value = "Street address.")
+  @ApiModelProperty(value = "Address 1")
   public String getStreet1() {
     return street1;
   }
@@ -138,9 +138,9 @@ public class Provider  {
 
   
   /**
-   * Street address continued.
+   * Address 2
    **/
-  @ApiModelProperty(value = "Street address continued.")
+  @ApiModelProperty(value = "Address 2")
   public String getStreet2() {
     return street2;
   }
@@ -150,9 +150,9 @@ public class Provider  {
 
   
   /**
-   * City.
+   * City
    **/
-  @ApiModelProperty(value = "City.")
+  @ApiModelProperty(value = "City")
   public String getCity() {
     return city;
   }
@@ -162,9 +162,9 @@ public class Provider  {
 
   
   /**
-   * State Identifier (2 char code).
+   * State/Province (2 char code)
    **/
-  @ApiModelProperty(value = "State Identifier (2 char code).")
+  @ApiModelProperty(value = "State/Province (2 char code)")
   public String getState() {
     return state;
   }
@@ -174,9 +174,9 @@ public class Provider  {
 
   
   /**
-   * Postal Code.
+   * ZIP/Postal Code
    **/
-  @ApiModelProperty(value = "Postal Code.")
+  @ApiModelProperty(value = "ZIP/Postal Code")
   public String getZipcode() {
     return zipcode;
   }
@@ -186,9 +186,9 @@ public class Provider  {
 
   
   /**
-   * Business location latitude.
+   * Latitude
    **/
-  @ApiModelProperty(value = "Business location latitude.")
+  @ApiModelProperty(value = "Latitude")
   public Float getLatitude() {
     return latitude;
   }
@@ -198,9 +198,9 @@ public class Provider  {
 
   
   /**
-   * Business location longitude.
+   * Longitude
    **/
-  @ApiModelProperty(value = "Business location longitude.")
+  @ApiModelProperty(value = "Longitude")
   public Float getLongitude() {
     return longitude;
   }
@@ -210,9 +210,9 @@ public class Provider  {
 
   
   /**
-   * Default ProviderTeam's id.
+   * Default ProviderTeam's id
    **/
-  @ApiModelProperty(value = "Default ProviderTeam's id.")
+  @ApiModelProperty(value = "Default ProviderTeam's id")
   public String getDefaultPartnersTeamsId() {
     return defaultPartnersTeamsId;
   }
@@ -222,9 +222,9 @@ public class Provider  {
 
   
   /**
-   * Email address.
+   * Email
    **/
-  @ApiModelProperty(value = "Email address.")
+  @ApiModelProperty(value = "Email")
   public String getEmail() {
     return email;
   }
@@ -234,9 +234,9 @@ public class Provider  {
 
   
   /**
-   * Primary contact phone number.
+   * Phone
    **/
-  @ApiModelProperty(value = "Primary contact phone number.")
+  @ApiModelProperty(value = "Phone")
   public String getPhone() {
     return phone;
   }
@@ -246,9 +246,9 @@ public class Provider  {
 
   
   /**
-   * Business website/URL.
+   * Web site (URL)
    **/
-  @ApiModelProperty(value = "Business website/URL.")
+  @ApiModelProperty(value = "Web site (URL)")
   public String getWebsite() {
     return website;
   }
@@ -258,9 +258,9 @@ public class Provider  {
 
   
   /**
-   * URL to an avatar.
+   * Avatar (URL)
    **/
-  @ApiModelProperty(value = "URL to an avatar.")
+  @ApiModelProperty(value = "Avatar (URL)")
   public String getAvatar() {
     return avatar;
   }
@@ -270,9 +270,9 @@ public class Provider  {
 
   
   /**
-   * Date created.
+   * Created
    **/
-  @ApiModelProperty(value = "Date created.")
+  @ApiModelProperty(value = "Created")
   public Date getCreated() {
     return created;
   }
@@ -282,9 +282,9 @@ public class Provider  {
 
   
   /**
-   * Date last updated.
+   * Updated
    **/
-  @ApiModelProperty(value = "Date last updated.")
+  @ApiModelProperty(value = "Updated")
   public Date getUpdated() {
     return updated;
   }

@@ -62,9 +62,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Primary key.
+   * Primary key
    **/
-  @ApiModelProperty(value = "Primary key.")
+  @ApiModelProperty(value = "Primary key")
   public String getId() {
     return id;
   }
@@ -74,9 +74,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Name.
+   * Name
    **/
-  @ApiModelProperty(value = "Name.")
+  @ApiModelProperty(value = "Name")
   public String getName() {
     return name;
   }
@@ -86,9 +86,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Hashtag nickname for group mentions in chat.
+   * Hashtag nickname for group mentions in chat
    **/
-  @ApiModelProperty(value = "Hashtag nickname for group mentions in chat.")
+  @ApiModelProperty(value = "Hashtag nickname for group mentions in chat")
   public String getNickname() {
     return nickname;
   }
@@ -98,9 +98,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Description.
+   * Description
    **/
-  @ApiModelProperty(value = "Description.")
+  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -110,9 +110,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Email address.
+   * Email
    **/
-  @ApiModelProperty(value = "Email address.")
+  @ApiModelProperty(value = "Email")
   public String getEmail() {
     return email;
   }
@@ -122,9 +122,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Primary contact phone number.
+   * Phone
    **/
-  @ApiModelProperty(value = "Primary contact phone number.")
+  @ApiModelProperty(value = "Phone")
   public String getPhone() {
     return phone;
   }
@@ -134,9 +134,9 @@ public class ProviderTeam  {
 
   
   /**
-   * URL to an avatar.
+   * Avatar (URL)
    **/
-  @ApiModelProperty(value = "URL to an avatar.")
+  @ApiModelProperty(value = "Avatar (URL)")
   public String getAvatar() {
     return avatar;
   }
@@ -146,9 +146,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Automatically routes related merchant issues to this ProviderTeam.
+   * Automatically set this ProviderTeam as first contact on new *Issues* from related *Merchants*
    **/
-  @ApiModelProperty(value = "Automatically routes related merchant issues to this ProviderTeam.")
+  @ApiModelProperty(value = "Automatically set this ProviderTeam as first contact on new *Issues* from related *Merchants*")
   public Boolean getAutoAssignRoute() {
     return autoAssignRoute;
   }
@@ -158,9 +158,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Automatically assigns this ProviderTeam as the sponsor for related merchants.
+   * Automatically set this ProviderTeam as sponsor for related *Merchant* billing
    **/
-  @ApiModelProperty(value = "Automatically assigns this ProviderTeam as the sponsor for related merchants.")
+  @ApiModelProperty(value = "Automatically set this ProviderTeam as sponsor for related *Merchant* billing")
   public Boolean getAutoAssignSponsor() {
     return autoAssignSponsor;
   }
@@ -170,9 +170,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Status.
+   * Status
    **/
-  @ApiModelProperty(value = "Status.")
+  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -182,9 +182,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Type / Category.
+   * Type/Category
    **/
-  @ApiModelProperty(value = "Type / Category.")
+  @ApiModelProperty(value = "Type/Category")
   public String getType() {
     return type;
   }
@@ -194,9 +194,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Exclusive within it's type / category.
+   * This ProviderTeam is exclusive within its type/category
    **/
-  @ApiModelProperty(value = "Exclusive within it's type / category.")
+  @ApiModelProperty(value = "This ProviderTeam is exclusive within its type/category")
   public Boolean getExclusive() {
     return exclusive;
   }
@@ -206,9 +206,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Published to the Connect App.
+   * This ProviderTeam is published in the Connect app
    **/
-  @ApiModelProperty(value = "Published to the Connect App.")
+  @ApiModelProperty(value = "This ProviderTeam is published in the Connect app")
   public Boolean getPublished() {
     return published;
   }
@@ -218,9 +218,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Name, as publushed in the Connect App.
+   * Name of this ProviderTeam as it appears in the Connect app
    **/
-  @ApiModelProperty(value = "Name, as publushed in the Connect App.")
+  @ApiModelProperty(value = "Name of this ProviderTeam as it appears in the Connect app")
   public String getPublishedName() {
     return publishedName;
   }
@@ -230,9 +230,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Enable private label branding.
+   * This ProviderTeam has private label branding in the Connect app
    **/
-  @ApiModelProperty(value = "Enable private label branding.")
+  @ApiModelProperty(value = "This ProviderTeam has private label branding in the Connect app")
   public Boolean getPrivateLabel() {
     return privateLabel;
   }
@@ -242,9 +242,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Private label brand color, used if private_label is true.
+   * Private label brand color (if private_label is true)
    **/
-  @ApiModelProperty(value = "Private label brand color, used if private_label is true.")
+  @ApiModelProperty(value = "Private label brand color (if private_label is true)")
   public String getBrandColor1() {
     return brandColor1;
   }
@@ -254,9 +254,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Private label logo, used if private_label is true.
+   * Private label logo (if private_label is true)
    **/
-  @ApiModelProperty(value = "Private label logo, used if private_label is true.")
+  @ApiModelProperty(value = "Private label logo (if private_label is true)")
   public String getBrandLogo1x() {
     return brandLogo1x;
   }
@@ -266,9 +266,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Private label logo (x2), used if private_label is true.
+   * Private label logo [x2] (if private_label is true)
    **/
-  @ApiModelProperty(value = "Private label logo (x2), used if private_label is true.")
+  @ApiModelProperty(value = "Private label logo [x2] (if private_label is true)")
   public String getBrandLogo2x() {
     return brandLogo2x;
   }
@@ -278,9 +278,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Private label logo (x3), used if private_label is true.
+   * Private label logo [x3] (if private_label is true)
    **/
-  @ApiModelProperty(value = "Private label logo (x3), used if private_label is true.")
+  @ApiModelProperty(value = "Private label logo [x3] (if private_label is true)")
   public String getBrandLogo3x() {
     return brandLogo3x;
   }
@@ -290,9 +290,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Primary support email address.
+   * Support Email
    **/
-  @ApiModelProperty(value = "Primary support email address.")
+  @ApiModelProperty(value = "Support Email")
   public String getSupportEmail() {
     return supportEmail;
   }
@@ -302,9 +302,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Primary support phone number.
+   * Support Phone
    **/
-  @ApiModelProperty(value = "Primary support phone number.")
+  @ApiModelProperty(value = "Support Phone")
   public String getSupportPhone() {
     return supportPhone;
   }
@@ -314,9 +314,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Primary support website.
+   * Support Website (URL)
    **/
-  @ApiModelProperty(value = "Primary support website.")
+  @ApiModelProperty(value = "Support Website (URL)")
   public String getSupportUrl() {
     return supportUrl;
   }
@@ -326,9 +326,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Date created.
+   * Created
    **/
-  @ApiModelProperty(value = "Date created.")
+  @ApiModelProperty(value = "Created")
   public Date getCreated() {
     return created;
   }
@@ -338,9 +338,9 @@ public class ProviderTeam  {
 
   
   /**
-   * Date last updated.
+   * Updated
    **/
-  @ApiModelProperty(value = "Date last updated.")
+  @ApiModelProperty(value = "Updated")
   public Date getUpdated() {
     return updated;
   }

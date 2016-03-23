@@ -38,9 +38,9 @@ public class IssuesApi {
 
   
   /**
-   * Set a Issue to a cancelled status
-   * Closes a *Issue* with a cancelled status
-   * @param issueId The primary key of the *Issue* to cancel.
+   * Cancel an Issue for a Merchant
+   * Transitions an *Issue* to a &#39;Canceled&#39; status in the workflow.
+   * @param issueId The primary key of the *Issue*
    * @return void
    */
   public void  cancelIssue (String issueId) throws ApiException {
@@ -96,12 +96,12 @@ public class IssuesApi {
   }
   
   /**
-   * Creates a new Issue
-   * Creates a new *Issue*
-   * @param issues Issue to create
+   * Create an Issue for a Merchant
+   * Creates an *Issue* object related to a *Merchant* object.
+   * @param issues The *Issue* to create
    * @return IssueResponse
    */
-  public IssueResponse  createIssue (Issue issues) throws ApiException {
+  public IssueResponse  createIssue (IssueCreateRequest issues) throws ApiException {
     Object localVarPostBody = issues;
     
 
@@ -149,9 +149,9 @@ public class IssuesApi {
   }
   
   /**
-   * Add a log to a Issue
-   * Logs notes to an *Issue*
-   * @param issueId The primary key of the related *Issue*
+   * Add an entry to an Issue&#39;s log
+   * Creates a new log entry related to an *Issue* object.
+   * @param issueId The primary key of the *Issue*
    * @param notes Notes to log against the *Issue*
    * @return IssueLogsResponse
    */
@@ -218,8 +218,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns a Issue
-   * Returns a *Issue* record
+   * Get an Issue
+   * Returns an *Issue* object.
    * @param issueId The primary key of the *Issue*
    * @return IssueResponse
    */
@@ -276,8 +276,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns a collection of IssueLogs
-   * Returns a collection of *IssueLog* records
+   * Get a collection of all Issue changes
+   * Returns a paginated collection of all changes for an *Issue* object.
    * @param issueId The primary key of the *Issue*
    * @return IssueLogsResponse
    */
@@ -334,8 +334,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns collection of categories
-   * Returns the categories available for an *Issue*
+   * Get &#39;Category&#39; dictionary for mapping keys to labels
+   * Returns a dictionary for mapping &#39;Category&#39; keys to labels on *Issue* objects.
    * @return EnumerationItemResponse
    */
   public EnumerationItemResponse  getIssueMetaCategories () throws ApiException {
@@ -386,8 +386,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns collection of resolutions
-   * Returns the resolutions available for an *Issue*
+   * Get &#39;Resolution&#39; dictionary for mapping keys to labels
+   * Returns a dictionary for mapping &#39;Resolution&#39; keys to labels on *Issue* objects.
    * @return EnumerationItemResponse
    */
   public EnumerationItemResponse  getIssueMetaResolutions () throws ApiException {
@@ -438,8 +438,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns collection of statuses
-   * Returns the statuses available for an *Issue*
+   * Get &#39;Status&#39; dictionary for mapping keys to labels
+   * Returns a dictionary for mapping &#39;Status&#39; keys to labels on *Issue* objects.
    * @return EnumerationItemResponse
    */
   public EnumerationItemResponse  getIssueMetaStatuses () throws ApiException {
@@ -490,8 +490,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns collection of types
-   * Returns the types available for an *Issue*
+   * Get &#39;Type&#39; dictionary for mapping keys to labels
+   * Returns a dictionary for mapping &#39;Type&#39; keys to labels on *Issue* objects.
    * @return EnumerationItemResponse
    */
   public EnumerationItemResponse  getIssueMetaTypes () throws ApiException {
@@ -542,8 +542,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns a collection of IssueStatuses
-   * Returns a collection of *IssueStatuse* records
+   * Get a collection of Issue status changes
+   * Returns a paginated collection of status changes for an *Issue* object.
    * @param issueId The primary key of the *Issue*
    * @return IssueStatusesResponse
    */
@@ -600,8 +600,8 @@ public class IssuesApi {
   }
   
   /**
-   * Returns a collection of Issues
-   * Returns a collection of *Issue* records
+   * Get a collection of Issues
+   * Returns a paginated collection of *Issue* objects.
    * @param limit Pagination result limit (defaults to 10)
    * @param start Pagination starting result number (defaults to 0)
    * @param membersId Optionally limit result to this {members_id}
@@ -667,9 +667,9 @@ public class IssuesApi {
   }
   
   /**
-   * Set a Issue to a resolved status
-   * Closes a *Issue* with a resolved status
-   * @param issueId The primary key of the *Issue* to resolve.
+   * Resolve an Issue for a Merchant
+   * Transitions an *Issue* to a &#39;Resolved&#39; status in the workflow.
+   * @param issueId The primary key of the *Issue*
    * @return void
    */
   public void  resolveIssue (String issueId) throws ApiException {
